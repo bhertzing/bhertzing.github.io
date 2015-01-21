@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Bill's Conversational Musings - Security</title>
+        <link rel="stylesheet" href="http://blog.billhertzing.com/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://blog.billhertzing.com/">Bill's Conversational Musings </a></h1>
+                <nav><ul>
+                    <li><a href="http://blog.billhertzing.com/category/home.html">Home</a></li>
+                    <li class="active"><a href="http://blog.billhertzing.com/category/security.html">Security</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="http://blog.billhertzing.com/security-at-every-layer.html">Security at Every Layer</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2015-01-16T00:00:00+01:00">
+                Published: Fri 16 January 2015
+        </abbr>
+		<br />
+        <abbr class="modified" title="2015-01-16T00:00:00+01:00">
+                Updated: Fri 16 January 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://blog.billhertzing.com/author/bill-hertzing.html">Bill Hertzing</a>
+        </address>
+<p>In <a href="http://blog.billhertzing.com/category/security.html">Security</a>. </p>
+<p>tags: <a href="http://blog.billhertzing.com/tag/.html"></a> </p>
+</footer><!-- /.post-info --><h2>Security at each pillar</h2>
+<p>Back in 2013 <a href="http://www.rackspace.com/blog/pillars-of-cloudiness-no-5-security/">Wayne Walls counted down the five essential pillars of cloudiness</a>.  These pillars are key considerations to keep in mind when building or running applications to run in the cloud.  Just recently this information was updated and explores these pillars in greater detail in a <a href="http://www.rackspace.com/blog/explore-the-five-pillars-of-cloudiness/">published white paper on the topic</a>.  </p>
+<p>The purpose of this post to touch on security approaches that should be addressed at every layer.  One of the pillars mentioned below actually is security.  It might seem circular in thinking as to how security can have security of it's own, but I'll touch on that in that section.  In any case, I think you will find each pillar should probably carry it's own security considerations.</p>
+<hr />
+<ul>
+<li>Pillar 1: Distributed and Parallel Computing</li>
+</ul>
+<p>Distributed and parallel computing is the idea of rather than running your application on a few pieces of infrastructure you spread them out to other systems.  You leverage computational power, perhaps, breaking them up by task.  Or, breaking them up by not only task but other metrics such as job size, platform or geo-location.</p>
+<p>However you do it, you will want to make sure that these systems are secure.  Making sure the worker servers (the ones doing the task) are only speaking to the message servers (the ones assigning the tasks) and nothing else.  This can be accomplished by having specific firewall and access controls for each system in place.</p>
+<p>In parallel computing the idea is you have more than one path into your site.  This might be desktop version and a mobile version of your site.  Not just a plug-in that reads what browser you are using but a separate cloud load balancer with specifically designed version of your site.  Keeping SSL certificates, for example, across all parallel paths is key to securing not only your but also proving your visitors with a safe and quality experience. </p>
+<hr />
+<ul>
+<li>Pillar 2: Modular Design and Service-Oriented Architecture</li>
+</ul>
+<p>Modular Design means separating parts of an application into smaller pieces.  Similar to what was mentioned earlier, these smaller pieces should only talk to the systems they need to and ignore all the rest.  So, for example, if we are separating a caching mechanism from the application to its own server, it should only be allowed to receive traffic from the systems it supports.</p>
+<p>That way should something fail or become compromised, the chances of that activity impacted becomes reduced.  It also allows for easier troubleshooting should a problem arise.  </p>
+<p>Security measures, however, that worked on one system may not be good enough in a modular environment.  For example switching to a secure HTTPS rather than unsecure HTTP for your API requests.  </p>
+<p>As network topology changes, going from private to hybrid or bursting into the cloud , make sure your security profiles changes with it.  A real simple example that could be overlooked is when using cloud load balancers.  When servers are deleted, make sure that the nodes are removed from the load balancer since it is common practice for those IP addresses to be reissued.</p>
+<hr />
+<ul>
+<li>Pillar 3: Horizontal Scaling with Stateless Applications</li>
+</ul>
+<p>Unlike scaling vertically where you make systems larger, scaling horizontally means adding more systems.  With vertical scaling the security updates and patched software remains in place.  With horizontal scaling, new systems are brought online.  </p>
+<p>It is absolutely important that these systems be brought up to speed before being put online.  New systems need not only content but also any security updates and patches.  Failure to do so can put your entire system at risk.</p>
+<hr />
+<ul>
+<li>Pillar 4: Becoming Agile During Different Demand Curves</li>
+</ul>
+<p>When cloud traffic patterns change, being agile means your cloud needs to adapt.  Additional resources need to come online and then when no longer need be removed to keep costs in check.</p>
+<p>Being agile in terms of security is important as well.  With some system security is managed at a server-by-server basis.  There are currently ways to help being agile where some 3rd party SaaS applications act as a web-based controller for firewalls.  Cloud providers offer the ability to pre-load public keys so as servers come online, they are applied accordingly.  </p>
+<p>These systems are still independent.  To add agility, these systems must be configured and designed to work in concert.  System discovery and automatic configuration is the start of that forward thinking.</p>
+<hr />
+<ul>
+<li>Pillar 5: Security in the Cloud</li>
+</ul>
+<blockquote>
+<h5>"Ultimately, security in the cloud is a shared responsibility between you and your cloud hosting provider." - Wayne Walls</h5>
+</blockquote>
+<p>This the fundamental security aspect to consider.  What is the cloud provider bringing to the table?  What will I need to provide?  In the article mentioned above, Wayne talks about Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS) and Software-as-a-Service (SaaS) and the security requirements of each.  It's important to know what you are buying for your cloud application.</p>
+<div class="highlight"><pre>    Something else needs to be said here.  Not sure what just yet.  Maybe this https://developer.rackspace.com/blog/security-on-the-open-cloud/
+</pre></div>
+
+
+<h2>Have a comment?</h2>
+<p>So, what do you think? Did I miss anything?  Is any part unclear?</p>
+<p><a href="https://twitter.com/BillHertzing">Send me a message on Twitter</a></p>                </article>
+<p class="paginator">
+    Page 1 / 1
+</p>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://billhertzing.com/">BillHertzing.com</a></li>
+                            <li><a href="http://www.rackspace.com/blog/">Rackspace Blog</a></li>
+                            <li><a href="https://developer.rackspace.com/blog/">Developer Blog</a></li>
+                            <li><a href="http://techblog.netflix.com/">Netflix Tech Blog</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://twitter.com/BillHertzing">Twitter</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

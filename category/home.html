@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <title>Bill's Conversational Musings - Home</title>
         <link rel="stylesheet" href="http://blog.billhertzing.com/theme/css/main.css" />
+        <link href="http://blog.billhertzing.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Bill's Conversational Musings Atom Feed" />
 
         <!--[if IE]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -20,39 +21,50 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://blog.billhertzing.com/use-your-data.html">Use Your Data</a></h1>
+                    <h1 class="entry-title"><a href="http://blog.billhertzing.com/security-at-every-layer.html">Security at Every Layer</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2015-01-12T14:44:00+01:00">
-                Published: Mon 12 January 2015
+        <abbr class="published" title="2015-01-21T00:00:00-06:00">
+                Published: Wed 21 January 2015
         </abbr>
 		<br />
-        <abbr class="modified" title="2015-01-12T14:44:00+01:00">
-                Updated: Mon 12 January 2015
+        <abbr class="modified" title="2015-01-21T00:00:00-06:00">
+                Updated: Wed 21 January 2015
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="http://blog.billhertzing.com/author/bill-hertzing.html">Bill Hertzing</a>
         </address>
 <p>In <a href="http://blog.billhertzing.com/category/home.html">Home</a>. </p>
-<p>tags: <a href="http://blog.billhertzing.com/tag/data.html">data</a> <a href="http://blog.billhertzing.com/tag/voc.html">voc</a> <a href="http://blog.billhertzing.com/tag/coffee.html">coffee</a> <a href="http://blog.billhertzing.com/tag/.html"></a> </p>
-</footer><!-- /.post-info --><h2>There's Data Everywhere</h2>
-<p>Most companies don't think of themselves as a data company but they are.  Today sensors can be located in almost anything.  From shoes, televisions, computers, watches, phones, cars, refrigerators and more are all collecting or reporting data.  Then there's user data like what customers buy, how often, related items, and where they live can reveal a lot of information about who they are.  </p>
-<h2>Brand Company First.  Data Company Second.</h2>
-<p>Most companies just want to sell a product or service.  While doing that, they collect information on their customers.  There's the first person data like usernames, passwords, gender, birthday and interests.  Then there is contextual data like where you live, what sporting events you attend, where you are located (Geodata) and what you buy.  Additionally, there is data through sensors.  Your phone probably has at least a motion sensor, GPS, light sensor and a microphone.   You get the idea.</p>
-<h2>Tell me how it applies to my application.</h2>
-<p>Give your customers relevant information that they can use to make informed choices.  Customers are saying, "I want this.  But, what do other think about this?"</p>
-<p>Recently I purchased a hot air popcorn popper.   Not to make tasty, fluffy popcorn but to roast coffee beans.  As it turns out, you can purchase unroasted coffee beans; roast them for a few minutes in a popcorn popper.  And, after resting for about 12-24 hours later, have fresh roasted coffee at a fraction of the price.  </p>
-<p>However, in my buying process, I read reviews about how the popper was not so good at popping popcorn.  Some said it ran too hot while others said it threw the kernels out of the chamber.  For me, however, my interests were in how well it roasted coffee as reported by others.</p>
-<p>I had to search other sources on the Internet to find out that, yes, this was a good popper for what I wanted to use it for.  One person even suggested that the company should re-brand the device as a coffee roaster as they could probably sell more units.</p>
-<h2>Use the data you have for good or for awesome.</h2>
-<h3>Good - Customer reviews and ratings.</h3>
-<p>Having customer reviews and rating is pretty much standard for any site these days.  However, is anyone reading it other than other consumers?  Sometimes it feels like they are not.  Posts, comments and complaints go unanswered sometimes adding to the frustration.  Voice of the customer data is important.  They will tell you what is working and what isn't.</p>
-<h3>Better - Help the customer understand your product as it applies to them and their situation.</h3>
-<p>If I'm looking at a shirt, I'd like to know what it looks like on a guy similar to me.  Sure it looks great on the model but I'm not as tone as he is.  How long did the shirt last?  Did it fit well?  Was it too hot to wear in the summer?</p>
-<h3>Best - Connect me with other people like me.</h3>
-<p>Help me find other people around me who like the things I do.  Connect me with people who share the same interests as me or better yet, have been where I am and succeeded.</p>
+<p>tags: <a href="http://blog.billhertzing.com/tag/security.html">security</a> <a href="http://blog.billhertzing.com/tag/cloud.html">cloud</a> <a href="http://blog.billhertzing.com/tag/five-pillars.html">five pillars</a> </p>
+</footer><!-- /.post-info --><h2>Security at each pillar</h2>
+<p>Back in 2013 <a href="http://www.rackspace.com/blog/pillars-of-cloudiness-no-5-security/">Wayne Walls counted down the five essential pillars of cloudiness</a>.  These pillars are key considerations to keep in mind when building or running applications for the cloud.  Not too long ago this information was updated in a <a href="http://www.rackspace.com/blog/explore-the-five-pillars-of-cloudiness/">published white paper on the topic</a> and explores these pillars in greater detail.  </p>
+<p>The purpose of this post is to touch on the security approaches that should be addressed at every layer.  One of the pillars mentioned is actually called Security.  It might seem circular in thinking as to how security can have security of its own, but I'll touch on that in that section.  In any case, I think you will find each pillar should probably carry its own security considerations.</p>
+<h2>Pillar 1: Parallel Computing</h2>
+<p>Distributed and parallel computing is the idea of rather than running your application on a few pieces of infrastructure you spread them out to other systems.  You can leverage computational power by breaking them up by task.  Or, you can break them up by metrics such as job size, user platform or geo-location.</p>
+<p>However you do it, you will want to make sure that these systems are secure.  Making sure the worker servers (the ones doing the task) are only speaking to the message servers (the ones assigning the tasks) and nothing else.  This can be accomplished by having specific firewall and access controls for each system in place.</p>
+<p>With parallel computing the idea is you have more than one path into your site.  This might be desktop version and a mobile version of your site.  Not just a plug-in that reads what browser you are using but a separate network path specifically designed and separate from other points of entry.  Keeping SSL certificates, for example, across all parallel paths is key to securing not only your but also proving your visitors with a safe and quality experience. </p>
+<h2>Pillar 2: Modular Design</h2>
+<p>Modular Design means separating parts of an application into smaller pieces.  Similar to what was mentioned earlier, these smaller pieces should only talk to the systems they need to and ignore all the rest.  So, for example, if we are separating a caching mechanism from the application to its own server, it should only be allowed to receive traffic from the systems it supports.</p>
+<p>That way should something fail or become compromised, the chances of that activity impacting other elements of the infrastructure becomes reduced.  It also allows for easier troubleshooting should a problem arise.  </p>
+<p>Security measures, however, that worked on one system may not be good enough in a modular environment.  Switching to a secure HTTPS rather than unsecure HTTP for your API requests is one illustration.  Where the requests were probably once contained in a single system, these requests might now have to traverse a public network or the Internet itself.  </p>
+<p>As network topology changes, going from private to hybrid or bursting into the cloud, make sure your security profiles changes with it.  A real simple example that could be overlooked is when using cloud load balancers.  When servers are deleted, make sure that the nodes are removed from the load balancer since it is common practice for those IP addresses to be reissued.  It would not be good for a person to visit a site and inadvertently arrive at another.</p>
+<h2>Pillar 3: Horizontal Scaling</h2>
+<p>Unlike scaling vertically where you make systems larger, scaling horizontally means adding more systems.  With vertical scaling the security updates and patched software remains in place.  With horizontal scaling, new systems are brought online.  </p>
+<p>It is absolutely important that these systems be brought up to speed before being put online.  New systems need not only content but also any security updates and patches.  Failure to do so can put your entire infrastructure at risk.</p>
+<h2>Pillar 4: Agility</h2>
+<p>When cloud traffic patterns change, being agile means your cloud needs to adapt.  Additional resources need to come online and then when no longer need be removed to keep costs in check.</p>
+<p>Being agile in terms of security is important as well.  With some systems security is managed at a server-by-server basis.  There are currently ways to be agile with the assistance of 3rd party SaaS tools.  These applications can act as a controller for firewalls, for example, making it easy to apply policies across multiple servers at once.  Additionally, some cloud providers offer the ability to pre-load public keys so as servers come online, they are applied accordingly.  </p>
+<p>As good as these systems are they are still independent.  One system is not aware of what the other system is doing.  To add agility, these systems must be configured and designed to work in concert.  Configuration management is a good start for making sure systems meet set standards.  System discovery and automatic configuration are on the horizon that will help administrators be agile and secure at the same time.</p>
+<h2>Pillar 5: Security in the Cloud</h2>
+<blockquote>
+<h5>"Ultimately, security in the cloud is a shared responsibility between you and your cloud hosting provider." - Wayne Walls</h5>
+</blockquote>
+<p>This is the fundamental security aspect to consider.  What is the cloud provider bringing to the table?  What will I need to provide?  In the article mentioned at the beginning, Wayne talks about Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS) and Software-as-a-Service (SaaS) and the security requirements of each.  It's important to know what you are buying for your cloud application.</p>
+<p>Security in the cloud is ultimately about people.  Here the fundamentals apply more than ever.  Strong password policies are a start.  Next is role-based access control then two-factor authentication.  Is this enough?  I am sure many of the recently publicized security breaches could be identified as a failure in security fundamentals.</p>
+<p>Users getting around policy and walking away with data is a major concern.  One way to address this might be the issue of encryption keys.  My prediction is that employees of the future will be issued a personal key.  These keys will/should be kept on premise.  They should never be kept in the cloud.  This key will be used for the sending of emails and the securing/tracking of sensitive data.</p>
+<p>The problem, naturally, is additional overhead.  To leverage the issuance of keys requires additional training, infrastructure and policies.  So, I imagine it will be a while before a balance is ever achieved between ease-of-use and security.    </p>
 <h2>Conclusion</h2>
-<p>Using your data to benefit your customers is something more companies should strive to accomplish.  When customers make more informed choices, there are fewer returns and refunds which directly impact the bottom line.</p>
+<p>Security can never be a set-it-and-forget-it matter.  It needs to be tracked, managed and change as your infrastructure changes.</p>
 <h2>Have a comment?</h2>
 <p>So, what do you think? Did I miss anything?  Is any part unclear?</p>
 <p><a href="https://twitter.com/BillHertzing">Send me a message on Twitter</a></p>                </article>
@@ -64,17 +76,44 @@
 
             <li><article class="hentry">
                 <header>
+                    <h1><a href="http://blog.billhertzing.com/use-your-data.html" rel="bookmark"
+                           title="Permalink to Use Your Data">Use Your Data</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2015-01-12T14:44:00-06:00">
+                Published: Mon 12 January 2015
+        </abbr>
+		<br />
+        <abbr class="modified" title="2015-01-12T14:44:00-06:00">
+                Updated: Mon 12 January 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://blog.billhertzing.com/author/bill-hertzing.html">Bill Hertzing</a>
+        </address>
+<p>In <a href="http://blog.billhertzing.com/category/home.html">Home</a>. </p>
+<p>tags: <a href="http://blog.billhertzing.com/tag/data.html">data</a> <a href="http://blog.billhertzing.com/tag/voc.html">voc</a> <a href="http://blog.billhertzing.com/tag/coffee.html">coffee</a> <a href="http://blog.billhertzing.com/tag/.html"></a> </p>
+</footer><!-- /.post-info -->                <h2>There's Data Everywhere</h2>
+<p>Most companies don't think of themselves as a data company but they are.  Today sensors can be located in almost anything.  From shoes, televisions, computers, watches, phones, cars, refrigerators and more are all collecting or reporting data.  Then there's user data like what customers ...</p>
+                <a class="readmore" href="http://blog.billhertzing.com/use-your-data.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
                     <h1><a href="http://blog.billhertzing.com/google-car.html" rel="bookmark"
                            title="Permalink to Google Car on a Sunday Drive">Google Car on a Sunday Drive</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2015-01-04T22:58:00+01:00">
+        <abbr class="published" title="2015-01-04T22:58:00-06:00">
                 Published: Sun 04 January 2015
         </abbr>
 		<br />
-        <abbr class="modified" title="2015-01-05T10:58:00+01:00">
+        <abbr class="modified" title="2015-01-05T10:58:00-06:00">
                 Updated: Mon 05 January 2015
         </abbr>
 
@@ -105,6 +144,7 @@
                 <div class="social">
                         <h2>social</h2>
                         <ul>
+                            <li><a href="http://blog.billhertzing.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
 
                             <li><a href="https://twitter.com/BillHertzing">Twitter</a></li>
                         </ul>
