@@ -1,11 +1,11 @@
 Title: Lawn Maintenance
-Date: 2/1/2015
-Category: Home
+Date: 2/2/2015
+Category: Living
 Tags: lawn, yard work, automation
 Authors: Bill Hertzing
 FacebookImage: http://blogimages.billhertzing.com/mower01.jpg
 
-![IMAGE DESCRIPTION](http://blogimages.billhertzing.com/mower01.jpg)
+![Mower](http://blogimages.billhertzing.com/mower01.jpg)
 
 Why am I still mowing my lawn?  For the past 30 or so years I have had to push a lawn mower around a yard in some way, shape, or form.  Granted, there were a few years in college where, when I was living in a dorm, I didn't have to do yard work.  However, when I got a house, I naturally had to get a lawn mower, keep it filled with gas, change the oil, park it in the garage and, on occasion, take it in for repairs.
 

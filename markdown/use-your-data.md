@@ -1,7 +1,6 @@
 Title: Use Your Data
 Date: 1/12/2015 02:44 pm
-Modified: 1/12/2015 02:44 pm
-Category: Home
+Category: Tips & Advice
 Tags: data, voc, coffee, 
 Slug: use-your-data
 Authors: Bill Hertzing

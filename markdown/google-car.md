@@ -1,11 +1,12 @@
 Title: Google Car on a Sunday Drive
 Date: 1/4/2015 10:58 pm
-Modified:1/5/2015 10:58 am
-Category: Home
+Category: Technology
 Tags: Google, car, automation
 Slug: google-car
 Authors: Bill Hertzing
+FacebookImage: http://blogimages.billhertzing.com/sunday-drive.jpg
 
+![Sunday Drive](http://blogimages.billhertzing.com/sunday-drive.jpg)
 
 Can automated driving, like the Google Car really anticipate everything the road has to offer.   There are a lot of questions I have that need to be answered before getting into one and just letting it drive.  Just this weekend we visited my grandmother.  While driving I gave consideration too all the ways my transportation would change if I were in a Google Car.
 

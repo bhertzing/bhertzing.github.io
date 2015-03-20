@@ -1,6 +1,6 @@
 Title: The Art of Decoupled Technology
 Date: 2/23/2015
-Category: Home
+Category: Technology
 Tags: website, database, modularity
 Authors: Bill Hertzing
 FacebookImage: http://blogimages.billhertzing.com/decouple-tech.jpg

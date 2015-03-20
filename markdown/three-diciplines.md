@@ -1,0 +1,55 @@
+Title: Three Website Disciplines Needed to Build a Website
+Date: 2/9/2015
+Category: Technology
+Tags: website, design
+Authors: Bill Hertzing
+FacebookImage: http://blogimages.billhertzing.com/three-diciplines.jpg
+
+![Three diciplines](http://blogimages.billhertzing.com/three-diciplines.jpg)
+
+As easy as it may seem, creating a good website can be a daunting task.  It's easy to just create a website, but how effective is it?  Who is your audience?  What kind of content will you serve up?  What will it look like?  Answering these questions requires more than one school of thought.
+
+The roles or disciplines needed for a quality website are copywriter, graphic designer and system engineer.  When you are a small operation, you will find you have to wear all three hats.  You might be able to outsource some of the work. Or at the very least, look to other sources for inspiration and ideas saving you on design time.  In any case, you will find you have to think with these various roles in mind when bringing a quality website to life. 
+
+## Copywriter
+
+Copywriters add content to the website design.  Writing for websites is more than just writing ad copy.  Authors must be able to capture the ideas, vision and mission of the company and explain them to the visitors.
+
+It's important to find a company that specializes in your area of expertise.  Look for [technical writers](http://www.youngcopy.com/services/technical-writing-services/) or [ghost writing](http://ghostblogwriters.com) services to help you generate content.   Some offer [content package deals](http://www.markitwrite.com/service/content-packages-deals/) where they include a daily blog post, a weekly article and social media management.    
+
+Another useful skill your copywriter should have is the ability to create indexable content.  This content with auxiliary data also called metadata is important for Search Engine Optimization or SEO related results.  This is content that, when crawlers find your site, meets the criteria of originality, popularity and so on for higher search ranking on Google, Yahoo and other engines.  Too many times I have heard the suggestion that keywords could just be repeated over and over again on every page in a small white font.  Stay away from ideas like that as the search engines will just flag those pages as SPAM.  
+
+What you want is original quality content that people will want to link to, reference, and forward on to other people and have them visit your site.
+
+## Graphic Designer
+
+A graphic designer will help you with the layout of your site.  It's best to work with somebody who understands your business.  It's possible to design a site that, although functional and technically correct, does nothing for your audience.  What is it you are selling versus what is it your customer is buying?   Is it carpet cleaning or are you selling clean carpets.  There is a difference.  And that will or should reflect in your design.  
+
+Then you will want to have the design work well as a user interface. It's important that your users know where to go to find what they are looking for.  Or, that they know what to expect when they click on a link.
+
+When I need some website design inspiration I look to [template monster](http://www.templatemonster.com).  I could (and have) spend hours on their site looking at different themes for different applications.  It's a great way to see how new web technologies should work together.  They have great templates for popular content management systems like Wordpress and Joomla.  I am especially amazed at the responsive static templates you can just download and run right away.  Template Monster offers live previews and list technical details and hosting requirements.  There are free samples you can download and try on your own.   You can test to see if the technology will work on your server.  You can even pay for an exclusive license for the design so you and only you have that theme.  
+
+Another thing I like to look for is HTML5, static, responsive templates.  These [templates](http://www.graphberry.com/category/free-html-web-templates) look like they might be attached to a high-end system, but really they are just [static HTML](http://demo.evenfly.com/view?theme=Drifolio) that can be cached and served up very easily.
+
+My only recommendation is if you go the pre-designed route, please replace the stock images of people and locations with original art.  I may not have the greatest attention to detail, but I do notice when images are not relevant to the site on which they are displayed.  And, it could be confusing for your brand, even on a subconscious level, if people see the same image on other sites.
+
+
+## System Engineer
+
+Once you have your site designed and have content ready to publish, you need a systems engineer.  System engineers help decide what technology your site will use.  Will it require a CMS?  Perhaps a static page will be sufficient.  The graphic designer and the systems engineer will need to work closely together.  The designer will want to change things like font, cell padding, drop shadow, etc..  It will be the system's engineer's job to take those requests and add the  functionality either to site code or supporting files like cascading style sheets or CSS.  
+
+A good place to start looking for somebody who will do the theme customization is [Fiverr.com](https://www.fiverr.com/search/gigs?acmpl=1&utf8=✓&search_in=everywhere&query=custom+wordpress+theme&page=1&layout=auto).  Fiverr.com offers people who charge for their services in $5 dollar increments.  [Elance.com](https://www.elance.com/r/contractors/q-theme%20customization/) is another site where you can search for professionals to help with your site development work.  Similar searches on Google will also help find people who are skilled in these areas.
+
+System engineers should be asking questions like, "How much traffic will the site receive?" or, "Will there be e-commerce?" or, "Will it need to scale?"  The answers to those questions will help decide which technologies to use.
+
+Once the site is designed and all the requests have been worked out, the system engineer can usually disengage from the project.  You might need to loop them in every 6-8 months to either update the site, apply a security patch, or something of that nature.  
+
+## Conclusion
+
+When building a site, think about who will be doing which task. As I mentioned earlier, an individual might have to wear more than one or all three hats.  When all three disciplines work together they can create a site that is effective, meaningful and built to last.   
+
+## Have a comment? ##
+So, what do you think? Did I miss anything?  Is any part unclear?
+
+[Send me a message on Twitter](https://twitter.com/BillHertzing)
+

@@ -1,6 +1,6 @@
 Title: WordCamp Hangout
 Date: 1/29/2015
-Category: Home
+Category: Technology
 Tags: wordpress, conference, san antonio
 Slug: wordcamp-hangout
 Authors: Bill Hertzing

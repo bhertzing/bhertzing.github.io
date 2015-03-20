@@ -1,12 +1,12 @@
 Title: WordCamp 2015 San Antonio
 Date: 1/26/2015 
-Category: Home
+Category: Technology
 Tags: wordpress, conference, san antonio
 Slug: wordcamp-san-antonio
 Authors: Bill Hertzing
 FacebookImage: http://blogimages.billhertzing.com/Bill-at-Wordcamp.jpg
  
-![](http://blogimages.billhertzing.com/Bill-at-Wordcamp.jpg) 
+![Bill at Wordcamp](http://blogimages.billhertzing.com/Bill-at-Wordcamp.jpg) 
  
 This past Saturday I worked the [CloudU](https://twitter.com/cloudu) booth at San Antonio's [WordCamp 2015](https://twitter.com/WordCampSATX) in San Antonio.  This is a conference for all things Wordpress.  There were developers, marketers and bloggers in attendance.  People were there to learn more about Wordpress and how they could better use the technology.  
  
@@ -28,7 +28,7 @@ Next, caching and page load times was a hot topic.  [Anthony Burchell](https://t
  
 I was able to peek into the *Zero to WordPress* talk led by Michele Butcher.  It was a packed room as many were anxious to learn about the basics of Wordpress.  Many that I talked to said they were really looking forward to that talk as they wanted to get in on the ground floor of what running Wordpress was all about.
  
-![](http://blogimages.billhertzing.com/Garrett-Talk2.jpg) 
+![Garrett Speaks](http://blogimages.billhertzing.com/Garrett-Talk2.jpg) 
  
 [Garrett Heath](https://twitter.com/pinojo)'s talk titled *Things I’ve Learned from 5+ Years of Blogging* was another event that was standing room only. Garrett shared what he has learned about maintaining [SA Flavor](http://www.saflavor.com), his local blog on San Antonio food and culture. He states that, "While WordPress has made it easier than ever for people to get their thoughts out there, aspiring bloggers often start with a lot of gusto and quickly abandon their blogs."  He stressed the importance of writing on a regular basis and the telling stories.  When you do that the audience will continue to come back for more.  Another key take away was that your blog is your resume.  That means when people look at you (or your resume) they will also look up what you have written or contributed.
  

@@ -1,7 +1,6 @@
 Title: Security at Every Layer
 Date: 1/21/2015
-Modified: 1/21/2015
-Category: Home
+Category: Technology
 Tags: security, cloud, five pillars
 Slug: security-at-every-layer
 Authors: Bill Hertzing
