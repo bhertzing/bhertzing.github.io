@@ -1,113 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <meta charset="utf-8" />
-        <title>Bill's Conversational Musings - security</title>
-        <link rel="stylesheet" href="http://blog.billhertzing.com/theme/css/main.css" />
-        <link href="http://blog.billhertzing.com/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Bill's Conversational Musings RSS Feed" />
+  <head>
+    <meta charset="utf-8" />
+    <title>Bill's Conversational Musings - security | Bill's Conversational Musings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Bill Hertzing" />
+    <meta name="kittycheck_rumble" content="true" />
+    <meta name="kittycheck_position" content="top=60,right=60" />
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+    <!-- Le styles -->
+    <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 13pt;
+      }
+      .tag-2 {
+        font-size: 10pt;
+      }
+      .tag-2 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 6pt;
+     }
+    </style>
+    <link href="../theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="../theme/css/font-awesome.css" rel="stylesheet">
+    <link href="../theme/css/pygments.css" rel="stylesheet">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="http://blog.billhertzing.com/">Bill's Conversational Musings </a></h1>
-                <nav><ul>
-                    <li><a href="http://blog.billhertzing.com/category/living.html">Living</a></li>
-                    <li><a href="http://blog.billhertzing.com/category/technology.html">Technology</a></li>
-                    <li><a href="http://blog.billhertzing.com/category/tips-advice.html">Tips & Advice</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="http://blog.billhertzing.com/security-at-every-layer.html">Security at Every Layer</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2015-01-21T00:00:00-06:00">
-                Published: Wed 21 January 2015
-        </abbr>
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../theme/img/favicon.ico">
+    <link rel="apple-touch-icon" href="../theme/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../theme/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../theme/img/apple-touch-icon-114x114.png">
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://blog.billhertzing.com/author/bill-hertzing.html">Bill Hertzing</a>
-        </address>
-<p>In <a href="http://blog.billhertzing.com/category/technology.html">Technology</a>. </p>
-<p>tags: <a href="http://blog.billhertzing.com/tag/security.html">security</a> <a href="http://blog.billhertzing.com/tag/cloud.html">cloud</a> <a href="http://blog.billhertzing.com/tag/five-pillars.html">five pillars</a> </p>
-</footer><!-- /.post-info --><h2>Security at each pillar</h2>
-<p>Back in 2013 <a href="http://www.rackspace.com/blog/pillars-of-cloudiness-no-5-security/">Wayne Walls counted down the five essential pillars of cloudiness</a>.  These pillars are key considerations to keep in mind when building or running applications for the cloud.  Not too long ago this information was updated in a <a href="http://www.rackspace.com/blog/explore-the-five-pillars-of-cloudiness/">published white paper on the topic</a> and explores these pillars in greater detail.  </p>
-<p>The purpose of this post is to touch on the security approaches that should be addressed at every layer.  One of the pillars mentioned is actually called Security.  It might seem circular in thinking as to how security can have security of its own, but I'll touch on that in that section.  In any case, I think you will find each pillar should probably carry its own security considerations.</p>
-<h2>Pillar 1: Parallel Computing</h2>
-<p>Distributed and parallel computing is the idea of rather than running your application on a few pieces of infrastructure you spread them out to other systems.  You can leverage computational power by breaking them up by task.  Or, you can break them up by metrics such as job size, user platform or geo-location.</p>
-<p>However you do it, you will want to make sure that these systems are secure.  Making sure the worker servers (the ones doing the task) are only speaking to the message servers (the ones assigning the tasks) and nothing else.  This can be accomplished by having specific firewall and access controls for each system in place.</p>
-<p>With parallel computing the idea is you have more than one path into your site.  This might be desktop version and a mobile version of your site.  Not just a plug-in that reads what browser you are using but a separate network path specifically designed and separate from other points of entry.  Keeping SSL certificates, for example, across all parallel paths is key to securing not only your but also proving your visitors with a safe and quality experience. </p>
-<h2>Pillar 2: Modular Design</h2>
-<p>Modular Design means separating parts of an application into smaller pieces.  Similar to what was mentioned earlier, these smaller pieces should only talk to the systems they need to and ignore all the rest.  So, for example, if we are separating a caching mechanism from the application to its own server, it should only be allowed to receive traffic from the systems it supports.</p>
-<p>That way should something fail or become compromised, the chances of that activity impacting other elements of the infrastructure becomes reduced.  It also allows for easier troubleshooting should a problem arise.  </p>
-<p>Security measures, however, that worked on one system may not be good enough in a modular environment.  Switching to a secure HTTPS rather than unsecure HTTP for your API requests is one illustration.  Where the requests were probably once contained in a single system, these requests might now have to traverse a public network or the Internet itself.  </p>
-<p>As network topology changes, going from private to hybrid or bursting into the cloud, make sure your security profiles changes with it.  A real simple example that could be overlooked is when using cloud load balancers.  When servers are deleted, make sure that the nodes are removed from the load balancer since it is common practice for those IP addresses to be reissued.  It would not be good for a person to visit a site and inadvertently arrive at another.</p>
-<h2>Pillar 3: Horizontal Scaling</h2>
-<p>Unlike scaling vertically where you make systems larger, scaling horizontally means adding more systems.  With vertical scaling the security updates and patched software remains in place.  With horizontal scaling, new systems are brought online.  </p>
-<p>It is absolutely important that these systems be brought up to speed before being put online.  New systems need not only content but also any security updates and patches.  Failure to do so can put your entire infrastructure at risk.</p>
-<h2>Pillar 4: Agility</h2>
-<p>When cloud traffic patterns change, being agile means your cloud needs to adapt.  Additional resources need to come online and then when no longer need be removed to keep costs in check.</p>
-<p>Being agile in terms of security is important as well.  With some systems security is managed at a server-by-server basis.  There are currently ways to be agile with the assistance of 3rd party SaaS tools.  These applications can act as a controller for firewalls, for example, making it easy to apply policies across multiple servers at once.  Additionally, some cloud providers offer the ability to pre-load public keys so as servers come online, they are applied accordingly.  </p>
-<p>As good as these systems are they are still independent.  One system is not aware of what the other system is doing.  To add agility, these systems must be configured and designed to work in concert.  Configuration management is a good start for making sure systems meet set standards.  System discovery and automatic configuration are on the horizon that will help administrators be agile and secure at the same time.</p>
-<h2>Pillar 5: Security in the Cloud</h2>
-<blockquote>
-<h5>"Ultimately, security in the cloud is a shared responsibility between you and your cloud hosting provider." - Wayne Walls</h5>
-</blockquote>
-<p>This is the fundamental security aspect to consider.  What is the cloud provider bringing to the table?  What will I need to provide?  In the article mentioned at the beginning, Wayne talks about Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS) and Software-as-a-Service (SaaS) and the security requirements of each.  It's important to know what you are buying for your cloud application.</p>
-<p>Security in the cloud is ultimately about people.  Here the fundamentals apply more than ever.  Strong password policies are a start.  Next is role-based access control then two-factor authentication.  Is this enough?  I am sure many of the recently publicized security breaches could be identified as a failure in security fundamentals.</p>
-<p>Users getting around policy and walking away with data is a major concern.  One way to address this might be the issue of encryption keys.  My prediction is that employees of the future will be issued a personal key.  These keys will/should be kept on premise.  They should never be kept in the cloud.  This key will be used for the sending of emails and the securing/tracking of sensitive data.</p>
-<p>The problem, naturally, is additional overhead.  To leverage the issuance of keys requires additional training, infrastructure and policies.  So, I imagine it will be a while before a balance is ever achieved between ease-of-use and security.    </p>
-<h2>Conclusion</h2>
-<p>Security can never be a set-it-and-forget-it matter.  It needs to be tracked, managed and change as your infrastructure changes.</p>
-<h2>Have a comment?</h2>
-<p>So, what do you think? Did I miss anything?  Is any part unclear?</p>
-<p><a href="https://twitter.com/BillHertzing">Send me a message on Twitter</a></p>                </article>
-<p class="paginator">
-    Page 1 / 1
-</p>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://billhertzing.com/">BillHertzing.com</a></li>
-                            <li><a href="http://www.rackspace.com/blog/">Rackspace Blog</a></li>
-                            <li><a href="https://developer.rackspace.com/blog/">Developer Blog</a></li>
-                            <li><a href="http://techblog.netflix.com/">Netflix Tech Blog</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="http://blog.billhertzing.com/feeds/rss.xml" type="application/rss+xml" rel="alternate">rss feed</a></li>
+    <link href="../" type="application/atom+xml" rel="alternate" title="Bill's Conversational Musings ATOM Feed" />
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="../index.html">Bill's Conversational Musings </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                <li class="divider-vertical"></li>
+                <li >
+                  <a href="../category/living.html">
+						        <i class="icon-folder-open icon-large"></i>Living
+					         </a>
+                </li>
+                <li >
+                  <a href="../category/technology.html">
+						        <i class="icon-folder-open icon-large"></i>Technology
+					         </a>
+                </li>
+                <li >
+                  <a href="../category/tips-advice.html">
+						        <i class="icon-folder-open icon-large"></i>Tips & Advice
+					         </a>
+                </li>
+              <ul class="nav pull-right">
+                    <li><a href="../archives.html"><i class="icon-th-list"></i>Archives</a></li>
+              </ul>
 
-                            <li><a href="https://twitter.com/BillHertzing">Twitter</a></li>
-                            <li><a href="http://www.linkedin.com/in/bhertzing">LinkedIn</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
+    <div class="container">
+      <div class="row">
+        <div class="span8" id="content">
+<div class="row">
+    <div class="span2">
+        <div class="well small"><footer class="post-info">
+<abbr class="published" title="2015-01-21T00:00:00-06:00">
+    <i class="icon-calendar"></i>&nbsp;Wed 21 January 2015
+</abbr>
+<br/><a href="../author/bill-hertzing.html"><i class="icon-user"></i>&nbsp;Bill Hertzing</a>
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
 
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-60144947-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
-</body>
+<br/>
+	&nbsp;&nbsp;<a href="../tag/security.html" class="label"><i class="icon-tag"></i>&nbsp;security</a>
+	&nbsp;&nbsp;<a href="../tag/cloud.html" class="label"><i class="icon-tag"></i>&nbsp;cloud</a>
+	&nbsp;&nbsp;<a href="../tag/five-pillars.html" class="label"><i class="icon-tag"></i>&nbsp;five pillars</a>
+</footer><!-- /.post-info --></div>
+    </div>
+    <div class="span6">
+        <div class="article well">
+            <h1><a href="../security-at-every-layer.html">Security at Every Layer</a></h1>
+            <div class="summary"><h2>Security at each pillar</h2>
+<p>Back in 2013 <a href="http://www.rackspace.com/blog/pillars-of-cloudiness-no-5-security/">Wayne Walls counted down the five essential pillars of cloudiness</a>.  These pillars are key considerations to keep in mind when building or running applications for the cloud.  Not too long ago this information was updated in a <a href="http://www.rackspace.com/blog/explore-the-five-pillars-of-cloudiness/">published white paper on the topic ...</a></p>
+                <a class="btn btn-small" href="../security-at-every-layer.html">more ...</a>
+            </div>
+        </div>
+    </div>
+    <div class="span8">
+        <hr />
+    </div>
+
+<div class="span6">
+</div>
+</div>
+        </div><!--/span-->
+        <div class="span3 well sidebar-nav" id="sidebar">
+<ul class="nav nav-list">
+<li class="nav-header"><h4><i class="icon-external-link"></i>blogroll</h4></li>
+    <li><div><i class="icon-external-link"></i><a href="http://billhertzing.com/">BillHertzing.com</a></div></li>
+    <li><div><i class="icon-external-link"></i><a href="http://www.rackspace.com/blog/">Rackspace Blog</a></div></li>
+    <li><div><i class="icon-external-link"></i><a href="https://developer.rackspace.com/blog/">Developer Blog</a></div></li>
+    <li><div><i class="icon-external-link"></i><a href="http://techblog.netflix.com/">Netflix Tech Blog</a></div></li>
+<li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
+<li><a href="../" rel="alternate"><i class="icon-bookmark icon-large"></i>atom feed</a></li>
+    <li><a href="https://twitter.com/BillHertzing"><i class="icon-Twitter-sign icon-large"></i>Twitter</a></li>
+    <li><a href="http://www.linkedin.com/in/bhertzing"><i class="icon-LinkedIn-sign icon-large"></i>LinkedIn</a></li>
+
+<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="../category/living.html">
+    <i class="icon-folder-open icon-large"></i>Living
+</a>
+</li>
+<li>
+<a href="../category/technology.html">
+    <i class="icon-folder-open icon-large"></i>Technology
+</a>
+</li>
+<li>
+<a href="../category/tips-advice.html">
+    <i class="icon-folder-open icon-large"></i>Tips & Advice
+</a>
+</li>
+
+<li class="nav-header"><a href="../tags.html"><h4><i class="icon-tags icon-large"></i>Tags</h4></a></li>
+    <li class="tag-4">
+        <a href="../tag/women.html">
+            <i class="icon-tag icon-large"></i>women
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/database.html">
+            <i class="icon-tag icon-large"></i>database
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/coffee.html">
+            <i class="icon-tag icon-large"></i>coffee
+        </a>
+    </li>
+    <li class="tag-1">
+        <a href="../tag/website.html">
+            <i class="icon-tag icon-large"></i>website
+        </a>
+    </li>
+    <li class="tag-1">
+        <a href="../tag/wordpress.html">
+            <i class="icon-tag icon-large"></i>wordpress
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/reflection.html">
+            <i class="icon-tag icon-large"></i>reflection
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/protection.html">
+            <i class="icon-tag icon-large"></i>protection
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/.html">
+            <i class="icon-tag icon-large"></i>
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/shopping.html">
+            <i class="icon-tag icon-large"></i>shopping
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/design.html">
+            <i class="icon-tag icon-large"></i>design
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/yard-work.html">
+            <i class="icon-tag icon-large"></i>yard work
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/storage.html">
+            <i class="icon-tag icon-large"></i>storage
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/strengths.html">
+            <i class="icon-tag icon-large"></i>strengths
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/voc.html">
+            <i class="icon-tag icon-large"></i>voc
+        </a>
+    </li>
+    <li class="tag-1">
+        <a href="../tag/cloud.html">
+            <i class="icon-tag icon-large"></i>cloud
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/data.html">
+            <i class="icon-tag icon-large"></i>data
+        </a>
+    </li>
+    <li class="tag-1">
+        <a href="../tag/conference.html">
+            <i class="icon-tag icon-large"></i>conference
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/google.html">
+            <i class="icon-tag icon-large"></i>Google
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/learning.html">
+            <i class="icon-tag icon-large"></i>learning
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/talent.html">
+            <i class="icon-tag icon-large"></i>talent
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/modularity.html">
+            <i class="icon-tag icon-large"></i>modularity
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/lawn.html">
+            <i class="icon-tag icon-large"></i>lawn
+        </a>
+    </li>
+    <li class="tag-1">
+        <a href="../tag/automation.html">
+            <i class="icon-tag icon-large"></i>automation
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/security.html">
+            <i class="icon-tag icon-large"></i>security
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/five-pillars.html">
+            <i class="icon-tag icon-large"></i>five pillars
+        </a>
+    </li>
+    <li class="tag-4">
+        <a href="../tag/car.html">
+            <i class="icon-tag icon-large"></i>car
+        </a>
+    </li>
+    <li class="tag-1">
+        <a href="../tag/san-antonio.html">
+            <i class="icon-tag icon-large"></i>san antonio
+        </a>
+    </li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+    </div><!--/.fluid-container-->
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-60144947-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../theme/js/jquery-1.7.2.min.js"></script>
+    <script src="../theme/js/bootstrap.min.js"></script>
+  </body>
 </html>
