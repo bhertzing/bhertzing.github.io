@@ -1,7 +1,7 @@
 Title: WordCamp Hangout
 Date: 1/29/2015
 Category: Technology
-Tags: wordpress, conference, san antonio
+Tags: wordpress, conference, san antonio, hangout
 Slug: wordcamp-hangout
 Authors: Bill Hertzing
 FacebookImage: http://blogimages.billhertzing.com/wordcamp-hangout.jpg

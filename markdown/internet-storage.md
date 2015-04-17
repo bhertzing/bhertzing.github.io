@@ -7,7 +7,7 @@ FacebookImage: http://blogimages.billhertzing.com/Internet-Storage.jpg
 
 ![Internet Storage](http://blogimages.billhertzing.com/Internet-Storage.jpg)
 
-The saying is there is no such thing as a free lunch.  You can, however, find some free and relatively affordable storage on the Internet and around your own area if you know where to look.  When you have worked in technology as long as I have it becomes a natural tendency to want to back things up and in multiple places.  The way a squirrel stashes nuts, I need a place to store data. 
+The saying often goes, "There is no such thing as a free lunch."  You can, however, find some free and relatively affordable storage on the Internet and around your own area if you know where to look.  When you have worked in technology as long as I have it becomes a natural tendency to want to back things up and in multiple places.  The way a squirrel stashes nuts, I need a place to store data. 
 
 There are places that offer accounts with free storage.  If you keep your eye out for promotions, you can sometimes get a respectable amount.  And when you have run out of free options, there are some providers that offer storage at very inexpensive prices.  
 
