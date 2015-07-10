@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-
-<title>Bill Hertzing | Cloud Launch Manager</title>
+  <meta charset="utf-8">
+  <title>Bill Hertzing | Cloud Launch Manager</title>
 <style type="text/css">
 
 
@@ -628,6 +626,7 @@ dl em {
 }
 
 </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body class="">
 	<div class="container">
@@ -641,10 +640,11 @@ dl em {
 			  +1 (512) 394-3556</p>
 			</blockquote>
 			<hr />
-				<h3 id="objective">Objective</h3>
-				<ol>
-					Connecting people’s enthusiasm with technology.
-				</ol>
+				<div id="objective-statement">
+					<script>
+					$( "#objective-statement" ).load( "objective.html" );
+					</script>
+				</div>
 			<hr />
 				<div id="achievement-list">
 					<script>
