@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Security at Every Layer &mdash; Bill's Conversational Musings</title>
+  <title>Wedding Gift Idea &mdash; Bill's Conversational Musings</title>
   <meta name="author" content="Bill Hertzing">
 
 
@@ -44,10 +44,10 @@
       <li >
         <a href="./category/music.html">Music</a>
       </li>
-      <li class="active">
+      <li >
         <a href="./category/technology.html">Technology</a>
       </li>
-      <li >
+      <li class="active">
         <a href="./category/tips-advice.html">Tips & advice</a>
       </li>
 </ul></nav>
@@ -56,40 +56,30 @@
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">Security at Every Layer</h1>
+      <h1 class="entry-title">Wedding Gift Idea</h1>
     <p class="meta">
-<time datetime="2015-01-21T00:00:00-06:00" pubdate>Wed 21 January 2015</time>    </p>
+<time datetime="2017-04-13T00:00:00-05:00" pubdate>Thu 13 April 2017</time>    </p>
 </header>
 
-  <div class="entry-content"><h2>Security at each pillar</h2>
-<p>Back in 2013 <a href="http://www.rackspace.com/blog/pillars-of-cloudiness-no-5-security/">Wayne Walls counted down the five essential pillars of cloudiness</a>.  These pillars are key considerations to keep in mind when building or running applications for the cloud.  Not too long ago this information was updated in a <a href="http://www.rackspace.com/blog/explore-the-five-pillars-of-cloudiness/">published white paper on the topic</a> and explores these pillars in greater detail.  </p>
-<p>The purpose of this post is to touch on the security approaches that should be addressed at every layer.  One of the pillars mentioned is actually called Security.  It might seem circular in thinking as to how security can have security of its own, but I'll touch on that in that section.  In any case, I think you will find each pillar should probably carry its own security considerations.</p>
-<h2>Pillar 1: Parallel Computing</h2>
-<p>Distributed and parallel computing is the idea of rather than running your application on a few pieces of infrastructure you spread them out to other systems.  You can leverage computational power by breaking them up by task.  Or, you can break them up by metrics such as job size, user platform or geo-location.</p>
-<p>However you do it, you will want to make sure that these systems are secure.  Making sure the worker servers (the ones doing the task) are only speaking to the message servers (the ones assigning the tasks) and nothing else.  This can be accomplished by having specific firewall and access controls for each system in place.</p>
-<p>With parallel computing the idea is you have more than one path into your site.  This might be desktop version and a mobile version of your site.  Not just a plug-in that reads what browser you are using but a separate network path specifically designed and separate from other points of entry.  Keeping SSL certificates, for example, across all parallel paths is key to securing not only your but also proving your visitors with a safe and quality experience. </p>
-<h2>Pillar 2: Modular Design</h2>
-<p>Modular Design means separating parts of an application into smaller pieces.  Similar to what was mentioned earlier, these smaller pieces should only talk to the systems they need to and ignore all the rest.  So, for example, if we are separating a caching mechanism from the application to its own server, it should only be allowed to receive traffic from the systems it supports.</p>
-<p>That way should something fail or become compromised, the chances of that activity impacting other elements of the infrastructure becomes reduced.  It also allows for easier troubleshooting should a problem arise.  </p>
-<p>Security measures, however, that worked on one system may not be good enough in a modular environment.  Switching to a secure HTTPS rather than unsecure HTTP for your API requests is one illustration.  Where the requests were probably once contained in a single system, these requests might now have to traverse a public network or the Internet itself.  </p>
-<p>As network topology changes, going from private to hybrid or bursting into the cloud, make sure your security profiles changes with it.  A real simple example that could be overlooked is when using cloud load balancers.  When servers are deleted, make sure that the nodes are removed from the load balancer since it is common practice for those IP addresses to be reissued.  It would not be good for a person to visit a site and inadvertently arrive at another.</p>
-<h2>Pillar 3: Horizontal Scaling</h2>
-<p>Unlike scaling vertically where you make systems larger, scaling horizontally means adding more systems.  With vertical scaling the security updates and patched software remains in place.  With horizontal scaling, new systems are brought online.  </p>
-<p>It is absolutely important that these systems be brought up to speed before being put online.  New systems need not only content but also any security updates and patches.  Failure to do so can put your entire infrastructure at risk.</p>
-<h2>Pillar 4: Agility</h2>
-<p>When cloud traffic patterns change, being agile means your cloud needs to adapt.  Additional resources need to come online and then when no longer need be removed to keep costs in check.</p>
-<p>Being agile in terms of security is important as well.  With some systems security is managed at a server-by-server basis.  There are currently ways to be agile with the assistance of 3rd party SaaS tools.  These applications can act as a controller for firewalls, for example, making it easy to apply policies across multiple servers at once.  Additionally, some cloud providers offer the ability to pre-load public keys so as servers come online, they are applied accordingly.  </p>
-<p>As good as these systems are they are still independent.  One system is not aware of what the other system is doing.  To add agility, these systems must be configured and designed to work in concert.  Configuration management is a good start for making sure systems meet set standards.  System discovery and automatic configuration are on the horizon that will help administrators be agile and secure at the same time.</p>
-<h2>Pillar 5: Security in the Cloud</h2>
-<blockquote>
-<h5>"Ultimately, security in the cloud is a shared responsibility between you and your cloud hosting provider." - Wayne Walls</h5>
-</blockquote>
-<p>This is the fundamental security aspect to consider.  What is the cloud provider bringing to the table?  What will I need to provide?  In the article mentioned at the beginning, Wayne talks about Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS) and Software-as-a-Service (SaaS) and the security requirements of each.  It's important to know what you are buying for your cloud application.</p>
-<p>Security in the cloud is ultimately about people.  Here the fundamentals apply more than ever.  Strong password policies are a start.  Next is role-based access control then two-factor authentication.  Is this enough?  I am sure many of the recently publicized security breaches could be identified as a failure in security fundamentals.</p>
-<p>Users getting around policy and walking away with data is a major concern.  One way to address this might be the issue of encryption keys.  My prediction is that employees of the future will be issued a personal key.  These keys will/should be kept on premise.  They should never be kept in the cloud.  This key will be used for the sending of emails and the securing/tracking of sensitive data.</p>
-<p>The problem, naturally, is additional overhead.  To leverage the issuance of keys requires additional training, infrastructure and policies.  So, I imagine it will be a while before a balance is ever achieved between ease-of-use and security.    </p>
-<h2>Conclusion</h2>
-<p>Security can never be a set-it-and-forget-it matter.  It needs to be tracked, managed and change as your infrastructure changes.</p>
+  <div class="entry-content"><p><img alt="Wedding Group" src="http://blogimages.billhertzing.com/wedding-gift01.jpg" /><br> 
+What do you get for a couple's wedding when you know nothing about them?  You do not know their likes.  You do not know their tastes or interests.  Sure, they registered for soaps, flowers, pots, pans at various stores.  However, what can you give them that is unique and personal?     </p>
+<p>The short answer is photos. Not just any photos as I will explain below. Moreover, I will explain the reason why these photographs will be very important to the guests of honor.      </p>
+<p>So, I recalled back to what I was thinking about on my wedding day. I can remember how busy I was.  There were so many people doing so many things it was more than one person could manage or keep track. That was only part of the problem.  There were people whom I wanted to visit with during this time.    However, I had to run over here and do this.  Perhaps somebody had a question that took a phone call and I had to run somewhere and do that. With all the activity going on I missed the little things like the children who were there.  I missed out in connecting with some friends and relatives that I had not seen in many years.    I looked at and saw people talking and laughing and falling out.    Then the idea occurred to me:  Take photos of all the activities going on around at the event.      I decided to take pictures of the things I knew the couple was missing. </p>
+<h2>Focus on what you do know.</h2>
+<p>You know you are going to be present at the nuptials.  You know there will be other people around. Because this is a celebration, it should be easy to capture great moments.</p>
+<p>There is a great deal of activity going on around you.  Only event coordinators who deal with that much input can handle days like that and still appreciate them.   Other people might feel overwhelmed by all the movement, conversations and decisions. The planning includes DJ, hair, makeup, clothing, decorations, food, entertainment, ceremony, music, minister, limo, photographer and more.    The unplanned activities include something is missing, torn, unavailable; somebody is in a sullen mood.  Those are all the distractions of the day.    Unless you are accustomed to that, it will be overwhelming for your ordinary couple.  They try to be gracious and perhaps it is too much to remember in one day.</p>
+<h2>What are they missing?</h2>
+<p>The pair is missing the beautiful things around them.  They have probably paid a lot for the use of the venue.   The venue may have a rock feature.     With all the things that are going around them, they do not get to savor much of what has been paid for.</p>
+<p><img alt="Getting Dressed" src="http://blogimages.billhertzing.com/wedding-gift02.jpg" /><br>
+Normally the bride and groom are getting dressed up in a room somewhere.  They are with their friends, reliving memories, exchanging gifts.    They are missing all the other activities that is going on about them.      The things I took photos of were of the decorations in their pristine state.    I tried to capture all the minor details that went into place.  </p>
+<p><img alt="Getting a drink" src="http://blogimages.billhertzing.com/wedding-gift04.jpg" /><br>
+Other things to take note of are the food, the beverages, the candle and flower arrangement.    Anything where people are bringing the venue together can make for a great shot.  One of the things often forgotten is all the effort by all the people to make the event happen.</p>
+<p><img alt="Kids on Rocks" src="http://blogimages.billhertzing.com/wedding-gift03.jpg" /><br>
+Other things to capture are the whimsical activities like children climbing on rocks, rolling down hills or fussing with a necktie.    I like to put a small bit of greenery between the camera and the subject.    This can work for a nice frame for the shot.  Another technique I will use is getting a shot of the person, as they are smiling or a laughing.    </p>
+<p><img alt="Friends Laughing" src="http://blogimages.billhertzing.com/wedding-gift05.JPG" /><br>
+It is a great sensation to be able to deliver a whole album where people are having fun.    It also makes for great photographs if you can capture people getting ready like putting on their shoes or tying their ties.</p>
+<h2>Delivering the Files</h2>
+<p>Once you have taken the photos, it is now time to go through them.    Cameras today can hold hundreds of photos.  If I take about 700 photos, I will usually have about 400 good shots.    It is at this point I might prefer to do some color correction or minor tuning to a few key images.      In order to deliver them, I will place them online somewhere.  There are many sites where you can post photos for free or for little cost.    Google, Flickr, Facebook, Pinterest, is only a few that come to mind.  I wrote an article a while back that talked about where to find <a href="http://blog.billhertzing.com/internet-storage.html">free storage on the Internet.</a></p>
 <h2>Have a comment?</h2>
 <p>So, what do you think? Did I miss anything?  Is any part unclear?</p>
 <p><a href="https://twitter.com/BillHertzing">Send me a message on Twitter</a></p></div>
@@ -100,11 +90,11 @@
         Bill Hertzing
     </span>
   </span>
-<time datetime="2015-01-21T00:00:00-06:00" pubdate>Wed 21 January 2015</time>  <span class="categories">
-    <a class='category' href='./category/technology.html'>Technology</a>
+<time datetime="2017-04-13T00:00:00-05:00" pubdate>Thu 13 April 2017</time>  <span class="categories">
+    <a class='category' href='./category/tips-advice.html'>Tips & Advice</a>
   </span>
   <span class="categories">
-    <a class="category" href="./tag/security.html">security</a>,    <a class="category" href="./tag/cloud.html">cloud</a>,    <a class="category" href="./tag/five-pillars.html">five pillars</a>  </span>
+    <a class="category" href="./tag/wedding.html">wedding</a>,    <a class="category" href="./tag/gift.html">gift</a>  </span>
 </p><div class="sharing">
 </div>    </footer>
   </article>
