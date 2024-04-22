@@ -67,39 +67,29 @@
 <time datetime="2015-02-23T00:00:00-06:00" pubdate>Mon 23 February 2015</time>    </p>
 </header>
 
-  <div class="entry-content"><p><img alt="IMAGE DESCRIPTION" src="http://blogimages.billhertzing.com/decouple-tech.jpg"></p>
-<p>Although cloud means shared hosting it gives you the power to decouple technology like never before.  To decouple technology means separating elements that have been traditionally connected into independent infrastructure pieces.  Once this done, these elements can be scaled, modified  or replaced altogether giving your systems better performance and reliability.</p>
+  <div class="entry-content"><p>Although cloud means shared hosting it gives you the power to decouple technology like never before.  To decouple technology means separating elements that have been traditionally connected into independent infrastructure pieces.  Once this done, these elements can be scaled, modified  or replaced altogether giving your systems better performance and reliability.</p>
 <h2>Web &amp; Database</h2>
-<p><img alt="Web &amp; Database" src="http://blogimages.billhertzing.com/web-database.jpg"></p>
 <p>Traditionally, we ran our web application and database on the same host.  This was mainly done because resources were limited.  Hardware costs were at a premium as well as other factors that came along with running more than one server like heat, square footage, power and network connectivity.</p>
 <p>In the cloud, it's best to decouple the web server from the database server.  The first thing this does is spreads the workload over multiple hosts.  Each server now holds its own set of resources to work with.  If one host needs more memory, additional servers can be added in a horizontal configuration.</p>
 <p>With the database, additional servers can be created with larger hardware.  The database can be exported and copied over to the new host, the app can then be migrated as the web servers are updated.</p>
 <h2>Caching &amp; Sessions</h2>
-<p><img alt="Caching &amp; Sessions" src="http://blogimages.billhertzing.com/Varnish-Web.jpg"></p>
 <p>Once the advantage is seen in what can be achieved when you decouple web and database, additional technologies can be separated.</p>
 <p>We can remove the caching mechanism from the web servers and make it a tier of its own. With the caching tier serving up static content the web servers have additional resources to serve up more dynamic content. </p>
 <p>Additionally, we can separate the session tracking functions to their own tier as well. By doing so you extend the memory pool of your caching software to any size you need.</p>
 <h2>Reads and Writes</h2>
-<p><img alt="Reads and writes" src="http://blogimages.billhertzing.com/reads-and-writes.jpg"></p>
 <p>Data written to and read from databases can generate strain as the system works to answer both requests. Resource exhaustion can occur if there are more requests than the system can handle.   In the cloud, currently, it is difficult to have a full master-master relationship.  That's where you can have multiple systems writing to the same data store.  However, one technique that has emerged is to decouple not the systems but the processes themselves.</p>
 <p>In this example, we have decoupled reads and writes.   The writes are directed to the master database.  The master database then is in replication with more than one slave server.  Those servers are then behind a load balancer which distributes the read request workload.  If additional read requests are made that push the servers beyond capacity, more servers can be added.  </p>
 <p>It should be noted that this configuration is not typically "turn-key" as it requires the code to be aware of decoupled servers for the different functions.  Most legacy applications that are hard coded for a single system will not be configurable in this manner.</p>
 <h2>Queues</h2>
-<p><img alt="Message Queues" src="http://blogimages.billhertzing.com/Message-Queue.jpg"></p>
 <p>Message queues are another way to decouple your configuration.  Message queues offer a way to buffer the data stream in case the application server processing the data becomes unavailable.  </p>
 <p>This is important if you have systems or sensors that are sending data back to be processed as it could be the only instance or record of that event.  You don't want to lose that data should your ability to process it become  unavailable due to maintenance, backlog, network connectivity issues and so on.</p>
 <p>Message queues can be offered as a service or are something you can run on your own infrastructure environment.  </p>
 <h2>Memory, CPU, Disk and Bandwidth</h2>
-<p><img alt="Disk CPU Memory Network" src="http://blogimages.billhertzing.com/Disk-cpu-memory-network.jpg"></p>
 <p>With the adoption of the cloud, we are now starting to see an era where the working components of the systems themselves can be decoupled.  Memory, CPU, disk and bandwidth can all be scaled independently based on need.  </p>
 <p>The most flexible part of this equation starts with the hard disk.  Leveraging the use of cloud block storage it is possible to attach your disk to a server configuration that favors more memory over anything else.  Or, you can disconnect that volume and boot it using a server that needs greater CPU resources.  Of course, configurations that have more bandwidth throughput are also available should the need arise.  Finally the disk itself can be cloned and made to be of a different size.   </p>
 <h2>Conclusion</h2>
 <p>As cloud technology continues to improve,  more and more ways to decouple technology from what we have traditionally known it will become available. Just recently I saw where the compute function has been decoupled and put onto a stick with an HDMI connector.  Plug the stick into a screen and you control it using wireless input devices.  This article is only an introduction about what is possible.</p>
-<p>The important takeaway is to find which methods work best for your situation.  What part of your application needs flexibility and/or scalability the most?  The answers to those questions will then help you decide what should be decoupled first.</p>
-<p>Image Source: http://en.wikipedia.org/wiki/Railway_coupling#mediaviewer/File:Scepka.GIF</p>
-<h2>Have a comment?</h2>
-<p>So, what do you think? Did I miss anything?  Is any part unclear?</p>
-<p><a href="https://twitter.com/BillHertzing">Send me a message on Twitter</a></p></div>
+<p>The important takeaway is to find which methods work best for your situation.  What part of your application needs flexibility and/or scalability the most?  The answers to those questions will then help you decide what should be decoupled first.</p></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">

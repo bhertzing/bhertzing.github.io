@@ -67,8 +67,7 @@
 <time datetime="2016-06-08T00:00:00-05:00" pubdate>Wed 08 June 2016</time>    </p>
 </header>
 
-  <div class="entry-content"><p><img alt="Title card 3-2-1 backup for the cloud" src="https://f104bc91250ce22c956e-33c24248ad1d10ca0ea0d8864a1d73e6.ssl.cf5.rackcdn.com/3-2-1-rule.jpg"></p>
-<p>Hey, another article about backing up in the cloud. Dull, right? We have come a long way from this reel of tape.  Stay with me as I try to draw some new connections to old principles.  </p>
+  <div class="entry-content"><p>Hey, another article about backing up in the cloud. Dull, right? We have come a long way from this reel of tape.  Stay with me as I try to draw some new connections to old principles.  </p>
 <p>Backups are one of those things that you know you need.  However, you sometimes find out either you were backing up the wrong thing or worse yet the backup failed or is corrupted and you did not know about it until it was too late. This is why when I am on the phone with customers and the topic comes up, I explain the classic 3-2-1 backup rule.</p>
 <ul>
 <li>Three backups</li>
@@ -90,10 +89,7 @@
 <p><strong>Replication:</strong> I gave this some consideration.  It is useful in a multi-tier cloud in that should a server fail, a replica server is in place to keep your site up and running.  However, if a corrupted file is uploaded, the sync mechanism is going replicate that corrupted data.  That's not helpful if you need to restore to a previous version.  It could be used on scheduled task or cron basis.  Still, I would want to be able to look at my backups within the past X days to see when things went wrong. </p>
 <p><strong>Cloud Block Storage Snapshots:</strong> At the time of this writing there isn't a way to schedule the snapshot and then delete the ones that are older than X days. Somebody probably has a script.  And, because it is a snapshot, it falls victim to the same corruption issues server snapshots have as mentioned above.</p>
 <h2>Conclusion (for real)</h2>
-<p>Perhaps tomorrow we will read something that makes replication and snapshots THE tool to use for backups.  Technology is always adapting and changing to new environments.  That reminds me of one more thing. Your backup solution will need to adapt and change with those new environments as well.</p>
-<h2>Have a comment?</h2>
-<p>So, what do you think? Did I miss anything?  Is any part unclear?</p>
-<p><a href="https://twitter.com/BillHertzing">Send me a message on Twitter</a></p></div>
+<p>Perhaps tomorrow we will read something that makes replication and snapshots THE tool to use for backups.  Technology is always adapting and changing to new environments.  That reminds me of one more thing. Your backup solution will need to adapt and change with those new environments as well.</p></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
