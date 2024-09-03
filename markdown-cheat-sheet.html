@@ -84,32 +84,24 @@
 
 
 <h2>H2</h2>
-<div class="highlight"><pre><span></span>{
-  ## H2
-}
+<div class="highlight"><pre><span></span>  ## H2
 </pre></div>
 
 
 <h3>H3</h3>
-<div class="highlight"><pre><span></span>{
-  ### H3
-}
+<div class="highlight"><pre><span></span>  ### H3
 </pre></div>
 
 
 <h3>Bold</h3>
 <p><strong>bold text</strong></p>
-<div class="highlight"><pre><span></span>{
-  **bold text**
-}
+<div class="highlight"><pre><span></span>  **bold text**
 </pre></div>
 
 
 <h3>Italic</h3>
 <p><em>italicized text</em></p>
-<div class="highlight"><pre><span></span>{
-  *italicized text*
-}
+<div class="highlight"><pre><span></span>  *italicized text*
 </pre></div>
 
 
@@ -117,26 +109,58 @@
 <blockquote>
 <p>blockquote</p>
 </blockquote>
+<div class="highlight"><pre><span></span>  &gt; blockquote
+</pre></div>
+
+
 <h3>Ordered List</h3>
 <ol>
 <li>First item</li>
 <li>Second item</li>
 <li>Third item</li>
 </ol>
+<div class="highlight"><pre><span></span>  1. First item
+  2. Second item
+  3. Third item
+</pre></div>
+
+
 <h3>Unordered List</h3>
 <ul>
 <li>First item</li>
 <li>Second item</li>
 <li>Third item</li>
 </ul>
-<h3>Code</h3>
+<div class="highlight"><pre><span></span>  - First item
+  - Second item
+  - Third item
+</pre></div>
+
+
+<h3>Code (Illustrated)</h3>
 <p><code>code</code></p>
+<div class="highlight"><pre><span></span>  `code`
+</pre></div>
+
+
 <h3>Horizontal Rule</h3>
 <hr>
+<div class="highlight"><pre><span></span>  ---
+</pre></div>
+
+
 <h3>Link</h3>
 <p><a href="https://www.markdownguide.org">Markdown Guide</a></p>
+<div class="highlight"><pre><span></span>  <span class="p">[</span><span class="n">Markdown</span> <span class="n">Guide</span><span class="p">](</span><span class="nl">https</span><span class="p">:</span><span class="c1">//www.markdownguide.org)</span>
+</pre></div>
+
+
 <h3>Image</h3>
 <p><img alt="alt text" src="https://www.markdownguide.org/assets/images/tux.png"></p>
+<div class="highlight"><pre><span></span>  <span class="o">!</span><span class="p">[</span><span class="n">alt</span> <span class="n">text</span><span class="p">](</span><span class="nl">https</span><span class="p">:</span><span class="c1">//www.markdownguide.org/assets/images/tux.png)</span>
+</pre></div>
+
+
 <h2>Extended Syntax</h2>
 <p>These elements extend the basic syntax by adding additional features. Not all Markdown applications support these elements.</p>
 <h3>Table</h3>
@@ -158,6 +182,13 @@
 </tr>
 </tbody>
 </table>
+<div class="highlight"><pre><span></span>  | Syntax | Description |
+  | ----------- | ----------- |
+  | Header | Title |
+  | Paragraph | Text |
+</pre></div>
+
+
 <h3>Fenced Code Block</h3>
 <div class="highlight"><pre><span></span>{
   &quot;firstName&quot;: &quot;John&quot;,
@@ -169,7 +200,14 @@
 
 <h3>Footnote</h3>
 <p>Here's a sentence with a footnote. <sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup></p>
-<h3>Heading ID</h3>
+<div class="highlight"><pre><span></span>  Here&#39;s a sentence with a footnote. [^1]
+
+  [^1]: This is the footnote.
+</pre></div>
+
+
+<hr>
+<h3>Heading ID (Content below doesn't work.)</h3>
 <h3 id="custom-id">My Great Heading</h3>
 <h3>Definition List</h3>
 <dl>
