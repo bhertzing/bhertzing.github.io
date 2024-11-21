@@ -1,0 +1,137 @@
+\version "2.24.4"
+
+
+\include "lilyjazz.ly"
+\include "predefined-guitar-fretboards.ly"
+
+
+
+%https://sheetsfree.com/sheets/NUM/10cc%20-%20I%27m%20Not%20in%20Love.pdf
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%Song Starts Here
+
+title = #"I'm Not In Love"
+composer = #"10cc"
+meter = #"(Moderately)"
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%Markup
+
+realBookTitle = \markup {
+  \score {
+    {
+      \override TextScript.extra-offset = #'(0 . -4.5)
+      s4
+      s^\markup {
+        \fill-line {
+          \fontsize #1 \lower #1 \rotate #7 \concat { " " #meter }
+          \fontsize #8
+          \override #'(offset . 7)
+          \override #'(thickness . 6)
+          \underline \sans #title
+          \fontsize #1 \lower #1 \concat { #composer " " }
+        }
+      }
+      
+    }
+    \layout {
+      \once \override Staff.Clef.stencil = ##f
+      \once \override Staff.TimeSignature.stencil = ##f
+      \once \override Staff.KeySignature.stencil = ##f
+      ragged-right = ##f
+      \override TextScript.font-name = #"LilyJAZZText"
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%Header
+\header {
+  title = \realBookTitle
+  tagline = ##f
+}
+
+<<
+ \numericTimeSignature
+ \new ChordNames = "chords" {
+    \chordmode {
+       a1:/b s b1 s1 | a1:/b s b1 s2 gis/c |
+       a1 |  s  | a:m  | s 
+       gis:m7 | gis/c | 
+       cis:m | cis:m/b | 
+       a1 |  s  | a:m  | s  |    
+       gis:m7 | gis/c |      
+       cis:m | cis:m/b |  
+       a | s | b | b:7 |
+       e1 | a/cis  | g  | a/cis  |
+       e1 |
+      
+      
+      
+      
+      
+    }
+  }
+
+  
+  
+  \new Voice = "melody" \with {
+    \consists "Pitch_squash_engraver"
+  } 
+  
+  
+  {
+    \key e \major
+    \relative c'' {
+      \improvisationOn
+      c4^\markup {\fret-diagram "6-x;5-2;4-2;3-2;2-2;1-o;"} c c c | c c c c | 
+      c^\markup {\fret-diagram "6-x;5-2;4-4;3-4;2-4;1-2;"} c c c | c c c c | 
+      c4 c c c | c c c c | \break
+      c c c c | c c c^\markup {\fret-diagram "6-x;5-3;4-1;3-1;2-1;1-x;"} c  | 
+      c4^\markup {\fret-diagram "6-5;5-7;4-7;3-6;2-5;1-5;"}-"I'm not in love,"  c c c | c c c c  |\break
+      c^\markup {\fret-diagram "6-5;5-7;4-7;3-5;2-5;1-5;"}-"so don't forget it," c c c | c c c c  |
+      c4^\markup {\fret-diagram "6-4;5-x;4-4;3-4;2-4;1-4;"}-"it's just a" c c c | c4-"silly phase I'm" c c c | \break
+      c^\markup {\fret-diagram "6-x;5-4;4-6;3-6;2-5;1-4;"}-"going through." c c c | c^\markup {\fret-diagram "6-x;5-2;4-6;3-6;2-5;1-x;"} c c c | 
+      c4^\markup {\fret-diagram "6-5;5-7;4-7;3-6;2-5;1-5;"}-"And just because" c c c | c c c c |\break
+      c4-"I call you up," c c c | c c c c | 
+      c4 c-"don't get me" c c | c-"wrong, don't think you've" c c c |\break
+      c4^\markup {\fret-diagram "6-x;5-4;4-x;3-1;2-2;1-o;"}-"got it made." c c c | c^\markup {\fret-diagram "6-x;5-2;4-x;3-1;2-2;1-o;"} c c c | 
+      c4^\markup {\fret-diagram "6-x;5-o;4-2;3-2;2-2;1-o;"} c-"I'm not in" c c | c-"love__" c c c-"no" |\break
+      c4-"no!" c c c | c c c-"It's" c-"be-" | 
+      c4^\markup {\fret-diagram "6-o;5-2;4-2;3-1;2-o;1-o;"}-"cause______" c c c | \break
+      c^\markup {\fret-diagram "6-x;5-4;4-2;3-2;2-2;1-x;"}  c c c |c^\markup {\fret-diagram "6-3;5-5;4-5;3-4;2-3;1-3;"} c c c  | 
+     c c c c | c1 \bar  "|."|
+
+
+
+
+    }
+  }
+  
+
+  
+
+>>
