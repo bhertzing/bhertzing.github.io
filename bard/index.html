@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shakespearean Insult Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: darkblue;
+        }
+        .insult {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            color: darkgreen;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: lightblue;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: deepskyblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shakespearean Insult Generator</h1>
+    <button onclick="generateInsult()">Generate Insult</button>
+    <p class="insult" id="insult">Click the button for an insult!</p>
+
+    <script>
+        // Lists of words
+        const list1 = ['artless', 'bawdy', 'beslubbering', 'bootless', 'churlish', 'cockered', 'craven', 'droning', 'gleeking', 'goatish', 'gorbellied', 'jarring', 'loggerheaded', 'rank', 'ruttish', 'vaillanous', 'wayward', 'weedy', 'venomed', 'qualing', 'puny', 'roguish', 'yeasty', 'tottering', 'suly', 'fobbing', 'currish', 'errant', 'forward', 'paunchy', 'warped'];
+        const list2 = ['base-court', 'bat-fowling', 'beef-witted', 'beetle-headed', 'boil-brained', 'clapper-clawed', 'common-kissing', 'dizzy-eyed', 'flat-mouthed', 'fly-bitten', 'folly-fallen', 'guts-gripping', 'half-faced', 'onion-eyed', 'pox-marked', 'tardy-gaited', 'toad-spotted', 'urchin-snouted', 'swag-bellied', 'motley-minded', 'knotty-pated', 'pottle-deep', 'weather-bitten', 'shard-borne', 'rump-fed', 'elf-skinned', 'crook-pated', 'dread-bolted', 'fat-kidneyed', 'reeling-ripe', 'tickle-brained'];
+        const list3 = ['apple-john', 'baggage', 'barnacle', 'bladder', 'boar', 'bugbear', 'canker-blossom', 'codpiece', 'footlicker', 'haggard', 'giglet', 'harpy', 'lout', 'minnow', 'moldwarp', 'strumpet', 'sheep-biter', 'vassal', 'whey-face', 'skainsmate', 'measle', 'lewdster', 'nut-hook', 'wagtail', 'pumpion', 'puttock', 'flap-dragon', 'clack-dish', 'death-token', 'flax-wench', 'ratsbane', 'varlot'];
+
+        // Function to generate a random insult
+        function generateInsult() {
+            const word1 = list1[Math.floor(Math.random() * list1.length)];
+            const word2 = list2[Math.floor(Math.random() * list2.length)];
+            const word3 = list3[Math.floor(Math.random() * list3.length)];
+            const insult = `Thou ${word1} ${word2} ${word3}!`;
+            document.getElementById('insult').textContent = insult;
+        }
+    </script>
+</body>
+</html>
+
