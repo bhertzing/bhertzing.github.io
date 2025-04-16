@@ -1,0 +1,165 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row =>
+                    row.some(cell => cell !== '' && cell !== null && cell !== undefined)
+                );
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Clock</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000000;
+            font-family: Arial, sans-serif;
+        }
+        #time-line, #date-line {
+            font-size: 48px;
+            text-align: center;
+            padding: 20px;
+            background-color: #000000;
+            color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px 0;
+        }
+        #date-line {
+            font-size: 36px; /* Slightly smaller for hierarchy */
+        }
+        .letter {
+            display: inline-block; /* Ensure letters are treated as inline blocks for animation */
+        }
+    </style>
+</head>
+<body>
+    <div id="time-line"></div>
+    <div id="date-line"></div>
+    <script>
+        const numberToWords = (num) => {
+            const ones = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+            const teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+            const tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+            const thousands = ['thousand'];
+
+            if (num === 0) return 'zero';
+            if (num < 10) return ones[num];
+            if (num < 20) return teens[num - 10];
+            if (num < 100) {
+                const ten = Math.floor(num / 10);
+                const one = num % 10;
+                return one === 0 ? tens[ten] : `${tens[ten]}-${ones[one]}`;
+            }
+            if (num < 1000) {
+                const hundred = Math.floor(num / 100);
+                const rest = num % 100;
+                return rest === 0 ? `${ones[hundred]} hundred` : `${ones[hundred]} hundred ${numberToWords(rest)}`;
+            }
+            if (num < 10000) {
+                const thousand = Math.floor(num / 1000);
+                const rest = num % 1000;
+                return rest === 0 ? `${ones[thousand]} ${thousands[0]}` : `${ones[thousand]} ${thousands[0]} ${numberToWords(rest)}`;
+            }
+            return num.toString(); // Fallback for larger numbers
+        };
+
+        const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+        const months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+
+        const updateClock = () => {
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            const day = now.getDay();
+            const month = now.getMonth();
+            const year = now.getFullYear();
+            const date = now.getDate();
+
+            // Time Line: Convert hours and minutes
+            const period = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12 || 12;
+            const hourWords = numberToWords(hours);
+            const minuteWords = minutes === 0 ? "o'clock" : numberToWords(minutes);
+            const timeString = `${hourWords} ${minuteWords} ${period}`;
+
+            // Wrap each non-space character in a span for color animation, preserve spaces
+            const chars = timeString.split('');
+            let letterCount = chars.filter(c => c !== ' ').length; // Count non-space characters
+            const secondsPerLetter = letterCount > 0 ? 60 / letterCount : 60; // Avoid division by zero
+            let letterIndex = 0; // Track non-space characters for animation timing
+            const timeLineHtml = chars.map((char) => {
+                if (char === ' ') {
+                    return char; // Preserve spaces as is
+                }
+                const delay = letterIndex * secondsPerLetter; // Delay for each letter
+                const animationProgress = seconds >= delay ? Math.min((seconds - delay) / secondsPerLetter, 1) : 0;
+                const style = `
+                    animation: colorChange 1s linear forwards;
+                    animation-delay: ${delay}s;
+                    color: ${animationProgress === 1 ? '#007bff' : '#ffffff'};
+                `;
+                letterIndex++;
+                return `<span class="letter" style="${style}">${char}</span>`;
+            }).join('');
+
+            // Update time line
+            document.getElementById('time-line').innerHTML = timeLineHtml;
+
+            // Date Line: Convert day, month, date, and year
+            const dayWords = days[day];
+            const monthWords = months[month];
+            const dateWords = numberToWords(date);
+            const yearWords = numberToWords(year);
+            const dateString = `${dayWords}, ${monthWords} ${dateWords}, ${yearWords}`;
+            document.getElementById('date-line').textContent = dateString;
+        };
+
+        // CSS animation for color change
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = `
+            @keyframes colorChange {
+                from { color: #ffffff; }
+                to { color: #007bff; }
+            }
+        `;
+        document.head.appendChild(styleSheet);
+
+        // Initial update
+        updateClock();
+
+        // Update every second to handle color transitions
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
