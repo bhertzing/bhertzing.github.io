@@ -1,0 +1,218 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Percentage Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .section {
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .section h2 {
+      color: #555;
+      margin-top: 0;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input {
+      padding: 8px;
+      width: 100%;
+      max-width: 200px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #e9ecef;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Percentage Calculator</h1>
+
+  <!-- Section 1: Percent of X -->
+  <div class="section">
+    <h2>1. Percent of X</h2>
+    <div class="input-group">
+      <label for="percent">Percentage (%):</label>
+      <input type="number" id="percent" placeholder="e.g., 15" step="0.01">
+    </div>
+    <div class="input-group">
+      <label for="number">Number:</label>
+      <input type="number" id="number" placeholder="e.g., 15000" step="0.01">
+    </div>
+    <button onclick="calculatePercentOfX()">Calculate</button>
+    <div class="result" id="percentOfXResult"></div>
+  </div>
+
+  <!-- Section 2: Percent Change Calculations -->
+  <div class="section">
+    <h2>2. Percent Change Calculations</h2>
+    <div class="input-group">
+      <label for="number1">Number 1:</label>
+      <input type="number" id="number1" placeholder="e.g., 1" step="0.01">
+    </div>
+    <div class="input-group">
+      <label for="number2">Number 2:</label>
+      <input type="number" id="number2" placeholder="e.g., 10" step="0.01">
+    </div>
+    <button onclick="calculatePercentChanges()">Calculate</button>
+    <div class="result" id="percentChangesResult"></div>
+  </div>
+
+  <script>
+    // Function to format numbers with comma separators
+    function formatNumber(num) {
+      return num.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    // Function for Percent of X and related calculations
+    function calculatePercentOfX() {
+      const percent = parseFloat(document.getElementById('percent').value);
+      const number = parseFloat(document.getElementById('number').value);
+      const resultDiv = document.getElementById('percentOfXResult');
+
+      if (isNaN(percent) || isNaN(number)) {
+        resultDiv.innerHTML = 'Please enter valid numbers.';
+        return;
+      }
+
+      // 1. Percent of X: (Percentage / 100) × Number
+      const percentOfX = (percent / 100) * number;
+
+      // 2. X plus percent: Number × (1 + (Percentage / 100))
+      const xPlusPercent = number * (1 + (percent / 100));
+
+      // 3. X minus percent: Number × (1 − (Percentage / 100))
+      const xMinusPercent = number * (1 - (percent / 100));
+
+      // 4. X as a percent of an original number: Number / (Percentage / 100)
+      const xAsPercentOfOriginal = number / (percent / 100);
+
+      // 5. X as a percent increase of an original number: Number / ((Percentage / 100) + 1)
+      const xAsPercentIncrease = number / ((percent / 100) + 1);
+
+      // 6. X as a percent decrease of an original number: Number / (1 − (Percentage / 100))
+      const xAsPercentDecrease = number / (1 - (percent / 100));
+
+      resultDiv.innerHTML = `
+        <strong>1. Percent of X:</strong> ${percent}% of ${formatNumber(number)} = ${formatNumber(percentOfX)}<br>
+        <strong>2. X plus percent:</strong> ${formatNumber(number)} plus ${percent}% = ${formatNumber(xPlusPercent)}<br>
+        <strong>3. X minus percent:</strong> ${formatNumber(number)} minus ${percent}% = ${formatNumber(xMinusPercent)}<br>
+        <strong>4. X as a percent of an original number:</strong> ${formatNumber(number)} is ${percent}% of ${formatNumber(xAsPercentOfOriginal)}<br>
+        <strong>5. X as a percent increase of an original number:</strong> ${formatNumber(number)} is a ${percent}% increase from ${formatNumber(xAsPercentIncrease)}<br>
+        <strong>6. X as a percent decrease of an original number:</strong> ${formatNumber(number)} is a ${percent}% decrease from ${formatNumber(xAsPercentDecrease)}
+      `;
+    }
+
+    // Function for Percent Change Calculations
+    function calculatePercentChanges() {
+      const number1 = parseFloat(document.getElementById('number1').value);
+      const number2 = parseFloat(document.getElementById('number2').value);
+      const resultDiv = document.getElementById('percentChangesResult');
+
+      if (isNaN(number1) || isNaN(number2)) {
+        resultDiv.innerHTML = 'Please enter valid numbers.';
+        return;
+      }
+
+      // 1. Percent Increase (Number 1 to Number 2): [(New − Original) / Original] × 100
+      const percentIncrease = ((number2 - number1) / number1) * 100;
+
+      // 2. Percent Decrease (Number 2 to Number 1): [(Number2 − Number1) / Number2] × 100
+      const percentDecrease = ((number2 - number1) / number2) * 100;
+      const decreaseResult = percentDecrease < 0 ? 0 : percentDecrease; // Ensure non-negative for decrease
+
+      // 3. Percent Difference (diff between Number 1 and Number 2): [(Number1 − Number2) / ((Number1 + Number2) / 2)] × 100
+      const percentDifference = (Math.abs(number1 - number2) / ((number1 + number2) / 2)) * 100;
+
+      // 4. Number 1 as a Percentage of Number 2: (Number1 / Number2) × 100
+      const number1AsPercentOfNumber2 = (number1 / number2) * 100;
+
+      // 5. Number 2 as a Percentage of Number 1: (Number2 / Number1) × 100
+      const number2AsPercentOfNumber1 = (number2 / number1) * 100;
+
+      resultDiv.innerHTML = `
+        <strong>1. Percent Increase (Number 1 to Number 2):</strong> ${formatNumber(percentIncrease)}%<br>
+        <strong>2. Percent Decrease:</strong> Number 2 to Number 1 = ${formatNumber(decreaseResult)}% decrease<br>
+        <strong>3. Percent Difference (diff between Number 1 and Number 2):</strong> ${formatNumber(percentDifference)}%<br>
+        <strong>4. Number 1 as a percentage of Number 2:</strong> ${formatNumber(number1)} as a percentage of ${formatNumber(number2)} = ${formatNumber(number1AsPercentOfNumber2)}%<br>
+        <strong>5. Number 2 as a percentage of Number 1:</strong> ${formatNumber(number2)} as a percentage of ${formatNumber(number1)} = ${formatNumber(number2AsPercentOfNumber1)}%
+      `;
+    }
+  </script>
+</body>
+</html>
