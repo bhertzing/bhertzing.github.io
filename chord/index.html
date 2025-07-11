@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chords Containing Note</title>
+</head>
+<body>
+<h1>Chords Containing a Note</h1>
+<br>For flat notes, use the enharmonic equivalant. (e.g. Bb = A#)<br>
+<input type="text" id="note" placeholder="Enter note (e.g. B)">
+<button onclick="findChords()">Find</button>
+<div id="result"></div>
+<script>
+const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+const chordTypes = {
+'': [0,4,7],
+'m': [0,3,7],
+'aug': [0,4,8],
+'dim': [0,3,6],
+'7': [0,4,7,10],
+'maj7': [0,4,7,11],
+'m7': [0,3,7,10],
+'minmaj7': [0,3,7,11],
+'dim7': [0,3,6,9],
+'m7b5': [0,3,6,10],
+};
+const chordSymbols = {
+'': '',
+'m': 'm',
+'aug': 'aug',
+'dim': 'dim',
+'7': '7',
+'maj7': 'maj7',
+'m7': 'm7',
+'minmaj7': 'minmaj7',
+'dim7': 'dim7',
+'m7b5': 'm7b5',
+};
+function findChords() {
+const note = document.getElementById('note').value.toUpperCase();
+if (!notes.includes(note)) {
+document.getElementById('result').innerHTML = 'Invalid note';
+return;
+}
+const result = [];
+for (let i = 0; i < notes.length; i++) {
+const root = notes[i];
+if (root === note) continue;
+const rootIdx = i;
+for (const key in chordTypes) {
+const semis = chordTypes[key];
+const symbol = chordSymbols[key];
+let chordName = root + symbol;
+const chordNotes = semis.map(s => notes[(rootIdx + s) % 12]);
+if (chordNotes.includes(note)) {
+if (!chordNotes.includes(note + 'b') && !chordNotes.includes(note + '#')) {
+if (chordName === 'D#aug') chordName = 'Ebaug';
+result.push(chordName);
+}
+}
+}
+}
+document.getElementById('result').innerHTML = result.join(', ');
+}
+</script>
+</body>
+</html>
