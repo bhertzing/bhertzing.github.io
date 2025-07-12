@@ -62,7 +62,7 @@ const chordNotes = semis.map(s => notes[(rootIdx + s) % 12]);
 if (chordNotes.includes(note)) {
 if (!chordNotes.includes(note + 'b') && !chordNotes.includes(note + '#')) {
 if (chordName === 'D#aug') chordName = 'Ebaug';
-result.push(`<a href="https://www.scales-chords.com/chord/guitar/${chordName}" target="_blank">${chordName}</a>`);
+result.push(`<a href="https://www.scales-chords.com/chord/guitar/${encodeURIComponent(chordName)}" target="_blank">${chordName}</a>`);
 }
 }
 }
