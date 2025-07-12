@@ -6,12 +6,18 @@
 </head>
 <body>
 <h1>Chords Containing a Note</h1>
-<br>For flat notes, use the enharmonic equivalant. (e.g. Bb = A#)<br>
 <input type="text" id="note" placeholder="Enter note (e.g. B)">
 <button onclick="findChords()">Find</button>
 <div id="result"></div>
 <script>
 const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+const enharmonics = {
+'DB': 'C#',
+'EB': 'D#',
+'GB': 'F#',
+'AB': 'G#',
+'BB': 'A#',
+};
 const chordTypes = {
 '': [0,4,7],
 'm': [0,3,7],
@@ -32,12 +38,13 @@ const chordSymbols = {
 '7': '7',
 'maj7': 'maj7',
 'm7': 'm7',
-'minmaj7': 'minmaj7',
+'minmaj7': 'm(maj7)',
 'dim7': 'dim7',
 'm7b5': 'm7b5',
 };
 function findChords() {
-const note = document.getElementById('note').value.toUpperCase();
+const inputNote = document.getElementById('note').value.toUpperCase();
+const note = enharmonics[inputNote] || inputNote;
 if (!notes.includes(note)) {
 document.getElementById('result').innerHTML = 'Invalid note';
 return;
@@ -55,7 +62,7 @@ const chordNotes = semis.map(s => notes[(rootIdx + s) % 12]);
 if (chordNotes.includes(note)) {
 if (!chordNotes.includes(note + 'b') && !chordNotes.includes(note + '#')) {
 if (chordName === 'D#aug') chordName = 'Ebaug';
-result.push(chordName);
+result.push(`<a href="https://www.scales-chords.com/chord/guitar/${chordName}" target="_blank">${chordName}</a>`);
 }
 }
 }
