@@ -34,9 +34,15 @@ img{max-width:100%;height:auto;border-radius:10px;}
 iframe{max-width:100%;}
 
 .aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.aurora canvas{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;}
 .orb{position:absolute;border-radius:50%;filter:blur(10px);}
-.orb-1{width:52vw;height:52vw;top:-22vw;left:-14vw;background:radial-gradient(circle,rgba(56,189,248,0.16),transparent 68%);}
-.orb-2{width:58vw;height:58vw;bottom:-26vw;right:-16vw;background:radial-gradient(circle,rgba(139,92,246,0.14),transparent 68%);}
+.orb-1{width:52vw;height:52vw;top:-22vw;left:-14vw;background:radial-gradient(circle,rgba(56,189,248,0.18),transparent 68%);animation:drift1 38s ease-in-out infinite alternate;}
+.orb-2{width:58vw;height:58vw;bottom:-26vw;right:-16vw;background:radial-gradient(circle,rgba(139,92,246,0.15),transparent 68%);animation:drift2 46s ease-in-out infinite alternate;}
+@keyframes drift1{to{transform:translate(9vw,7vh);}}
+@keyframes drift2{to{transform:translate(-8vw,-6vh);}}
+@media (prefers-reduced-motion: reduce){
+  .orb-1,.orb-2{animation:none;}
+}
 
 .disp{font-family:var(--f-display);letter-spacing:var(--track);text-transform:uppercase;}
 .data{font-family:var(--f-data);}
