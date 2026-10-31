@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Silent Metronome to Remote Control — Bill&#x27;s Conversational Musings</title>
+<link rel="icon" href="images/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bill&#x27;s Conversational Musings">
+<meta property="og:title" content="From Silent Metronome to Remote Control">
+<meta property="og:image" content="https://blog.billhertzing.com/images/social-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blog.billhertzing.com/images/social-card.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme/style.css">
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div><canvas id="skyCanvas"></canvas></div>
+<div class="wrap">
+  <header class="glass topbar">
+    <div>
+      <p class="eyebrow">BILL HERTZING · BLOG</p>
+      <a class="wordmark" href="index.html">Bill's <span>Conversational Musings</span></a>
+    </div>
+    <form class="site-search" action="search.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Search posts" aria-label="Search posts" autocomplete="off">
+    </form>
+  </header>
+  <nav class="nav"><a href="category/customer-success.html">Customer Success</a><a href="category/lessons.html">Lessons</a><a href="category/literature.html">Literature</a><a href="category/living.html">Living</a><a href="category/music.html">Music</a><a href="category/technology.html">Technology</a><a href="category/tips-advice.html">Tips &amp; Advice</a></nav>
+  
+<div class="layout">
+  <article class="glass article">
+    <p class="when">Sat 31 October 2026</p>
+    <h1 class="post-title">From Silent Metronome to Remote Control</h1>
+    <div class="meta-row"><a class="pill" href="category/technology.html">Technology</a><a class="pill" href="tag/ai.html">AI</a><a class="pill" href="tag/jarvis.html">JARVIS</a><a class="pill" href="tag/code.html">code</a></div>
+    <div class="body"><p><img alt="Shift register board in Wokwi" src="/images/shift-register-wokwi.png" /></p>
+<p>Back in March of last year I wrote <a href="https://blog.billhertzing.com/ignorance-is-a-choice.html">Ignorance is a Choice</a>. That was the one where Grok spent an hour teaching me how a 74HC595 shift register works. I drew the circuit in Tinkercad and called it a silent metronome. Eight LEDs that blink the beat instead of clicking it.</p>
+<p><img alt="The original Tinkercad drawing" src="/images/shift-register-tinkercad.png" /></p>
+<p>Then I built it. And then it just sat there on my desk running its little metronome sketch. I kept thinking it would make a great silent metronome someday. It never did. I built it to learn shift registers, and once I'd learned them the board didn't have a job.</p>
+<p>It has one now.</p>
+<h2>The board got a job</h2>
+<p>These days I talk to JARVIS, my AI assistant, by voice. The same eight LEDs now show what it's doing. They fill up while I'm holding the talk key. They sweep back and forth while it's thinking. When it talks, the bar bounces along with its voice. The first time I saw that I said it was blinking in sync with what it was saying, like, really well. It still makes me smile.</p>
+<p>The last LED has its own job. It blinks when my HUD is waiting for me to approve something. Another one stays on when mail or a phone message is waiting.</p>
+<p>Here's why that matters to me. If I've got another application in full screen, I can't see the HUD. I'd have no idea JARVIS was still listening, or that something was waiting on me, without bouncing back to check. The lights tell me without taking any of the screen. It's feedback that lives off the screen.</p>
+<p>The board doesn't hear anything, by the way. The Mac sends it tiny text messages down the USB cable, a letter and a number. "v5" means light five LEDs. That's the whole trick, and it's the same trick the metronome used.</p>
+<h2>The board went virtual</h2>
+<p>The next surprise was Wokwi. It's a free Arduino simulator that runs in the browser. JARVIS wrote out the breadboard drawing as a text file, and now the same board runs both sketches, the metronome and the status lights, without touching any hardware. So the story went from a Tinkercad drawing, to a real board, to a simulated copy of the real board.</p>
+<p>It wasn't all smooth. Getting the chip to seat in the simulator took four rounds and a hover over one stubborn pin.</p>
+<h2>Then I got a remote</h2>
+<p><img alt="The Wokwi board with the IR remote, key 1 lighting the bar" src="/images/shift-register-wokwi-remote.png" /></p>
+<p>My kit came with a little infrared remote and a receiver, so we added them. Now the number keys do things. One checks the mail. Two checks for phone messages. Three makes JARVIS repeat what it just said. Four saves a clip.</p>
+<p>The power button is my favorite. One press shuts the whole system down, the HUD and the voice and everything. Press it again and it all comes back on, and JARVIS says good evening. I'm having way too much fun with it. There are still sixteen keys left over.</p>
+<h2>What I took from it</h2>
+<p>Nothing I built for this was new. The board was a year and a half old. The remote came in the kit. What changed was having something worth plugging them into. Same as when I <a href="https://blog.billhertzing.com/jarvis-calls-a-restaurant.html">had JARVIS call a restaurant</a>, or when I <a href="https://blog.billhertzing.com/vibe-coding-a-word-clock.html">vibe coded a word clock</a>. The parts were sitting around. The idea showed up later.</p>
+<p>So if you've got an old project sitting in a drawer, don't throw it out. It might just be waiting for its job.</p>
+<p>What's sitting in your drawer?</p></div>
+  </article>
+  
+<aside class="glass side">
+  <h2>Recent Posts</h2>
+  <ul><li><a href="from-silent-metronome-to-remote-control.html">From Silent Metronome to Remote Control</a></li><li><a href="the-lost-art-of-the-thank-you-card.html">The Lost Art of the Thank You Card</a></li><li><a href="the-gentlemans-calling-card.html">The Gentleman&#x27;s Calling Card</a></li><li><a href="the-dressing-gown.html">The Dressing Gown</a></li><li><a href="jarvis-calls-a-restaurant.html">I Had JARVIS Call a Restaurant</a></li></ul>
+  <h2>Categories</h2>
+  <ul><li><a href="category/customer-success.html">Customer Success</a></li><li><a href="category/lessons.html">Lessons</a></li><li><a href="category/literature.html">Literature</a></li><li><a href="category/living.html">Living</a></li><li><a href="category/music.html">Music</a></li><li><a href="category/technology.html">Technology</a></li><li><a href="category/tips-advice.html">Tips &amp; Advice</a></li></ul>
+  <h2>Tags</h2>
+  <div class="tags"><a href="tag/2021.html">2021</a><a href="tag/acoustic.html">acoustic</a><a href="tag/advice.html">advice</a><a href="tag/ai.html">AI</a><a href="tag/archive.html">archive</a><a href="tag/austin.html">austin</a><a href="tag/automation.html">automation</a><a href="tag/backup.html">backup</a><a href="tag/bakery.html">bakery</a><a href="tag/blog.html">blog</a><a href="tag/book.html">book</a><a href="tag/bookmark.html">bookmark</a><a href="tag/bookmarks.html">bookmarks</a><a href="tag/california.html">california</a><a href="tag/car.html">car</a><a href="tag/career.html">career</a><a href="tag/character.html">character</a><a href="tag/chord.html">chord</a><a href="tag/cleaning.html">cleaning</a><a href="tag/clock.html">clock</a><a href="tag/cloud.html">cloud</a><a href="tag/code.html">code</a><a href="tag/coffee.html">coffee</a><a href="tag/conference.html">conference</a><a href="tag/culture.html">culture</a><a href="tag/customer-success.html">customer success</a><a href="tag/data.html">data</a><a href="tag/database.html">database</a><a href="tag/daw.html">daw</a><a href="tag/denver.html">denver</a><a href="tag/design.html">design</a><a href="tag/dns.html">dns</a><a href="tag/dogs.html">dogs</a><a href="tag/download.html">download</a><a href="tag/drink.html">drink</a><a href="tag/estes-park.html">estes park</a><a href="tag/etiquette.html">etiquette</a><a href="tag/fabric.html">fabric</a><a href="tag/failure.html">failure</a><a href="tag/festival.html">festival</a><a href="tag/film.html">film</a><a href="tag/five-pillars.html">five pillars</a><a href="tag/food.html">food</a><a href="tag/fretboard.html">fretboard</a><a href="tag/fun.html">fun</a><a href="tag/game.html">game</a><a href="tag/genai.html">GenAI</a><a href="tag/gentleman.html">gentleman</a><a href="tag/gift.html">gift</a><a href="tag/google.html">Google</a><a href="tag/guitar.html">guitar</a><a href="tag/hangout.html">hangout</a><a href="tag/hemingway.html">Hemingway</a><a href="tag/housekeeping.html">housekeeping</a><a href="tag/howto.html">HowTo</a><a href="tag/html.html">html</a><a href="tag/ideas.html">ideas</a><a href="tag/interview.html">interview</a><a href="tag/jarvis.html">JARVIS</a><a href="tag/journal.html">journal</a><a href="tag/keyboard.html">keyboard</a><a href="tag/launch.html">launch</a><a href="tag/lawn.html">lawn</a><a href="tag/learning.html">learning</a><a href="tag/lesson.html">lesson</a><a href="tag/light.html">light</a><a href="tag/lilypond.html">lilypond</a><a href="tag/linux.html">linux</a><a href="tag/markdown.html">markdown</a><a href="tag/mastering.html">mastering</a><a href="tag/modularity.html">modularity</a><a href="tag/motivation.html">motivation</a><a href="tag/music.html">music</a><a href="tag/navy.html">navy</a><a href="tag/networking.html">networking</a><a href="tag/phone.html">phone</a><a href="tag/photo.html">photo</a><a href="tag/picking.html">picking</a><a href="tag/pizza.html">pizza</a><a href="tag/playlist.html">playlist</a><a href="tag/protection.html">protection</a><a href="tag/quote.html">quote</a><a href="tag/quotes.html">quotes</a><a href="tag/rackspace.html">rackspace</a><a href="tag/recipe.html">recipe</a><a href="tag/recording.html">recording</a><a href="tag/reflection.html">reflection</a><a href="tag/relationships.html">relationships</a><a href="tag/renew.html">renew</a><a href="tag/respect.html">respect</a><a href="tag/review.html">review</a><a href="tag/rocky-mountains.html">rocky mountains</a><a href="tag/san-antonio.html">san antonio</a><a href="tag/scales.html">scales</a><a href="tag/scam.html">scam</a><a href="tag/score.html">score</a><a href="tag/security.html">security</a><a href="tag/shopping.html">shopping</a><a href="tag/storage.html">storage</a><a href="tag/strengths.html">strengths</a><a href="tag/style.html">style</a><a href="tag/system.html">system</a><a href="tag/talent.html">talent</a><a href="tag/technology.html">technology</a><a href="tag/texas.html">texas</a><a href="tag/tour.html">tour</a><a href="tag/traffic.html">traffic</a><a href="tag/travel.html">travel</a><a href="tag/tropical.html">tropical</a><a href="tag/tv.html">tv</a><a href="tag/video.html">video</a><a href="tag/virtual.html">virtual</a><a href="tag/vlog.html">vlog</a><a href="tag/voc.html">voc</a><a href="tag/voice.html">voice</a><a href="tag/wardrobe.html">wardrobe</a><a href="tag/water.html">water</a><a href="tag/webinar.html">webinar</a><a href="tag/website.html">website</a><a href="tag/wedding.html">wedding</a><a href="tag/windows.html">windows</a><a href="tag/wine.html">wine</a><a href="tag/women.html">women</a><a href="tag/wordpress.html">wordpress</a><a href="tag/yard-work.html">yard work</a></div>
+  <h2>Social</h2>
+  <ul><li><a href="https://twitter.com/BillHertzing">Twitter</a></li><li><a href="http://www.linkedin.com/in/bhertzing">LinkedIn</a></li><li><a href="https://www.instagram.com/bhertzing/">Instagram</a></li><li><a href="https://www.youtube.com/billhertzing">YouTube</a></li><li><a href="https://soundcloud.com/billhertzing">SoundCloud</a></li></ul>
+  <h2>Blogroll</h2>
+  <ul>
+    <li><a href="search.html">Search this site</a></li>
+    <li><a href="http://billhertzing.com/">BillHertzing.com</a></li><li><a href="https://www.youtube.com/c/ScottBalkum">Scott Balkum YouTube</a></li>
+  </ul>
+</aside>
+
+</div>
+
+  <footer class="site-foot">
+    <span>Copyright © 2015–2026 Bill Hertzing</span>
+  </footer>
+</div>
+<script src="theme/sky.js"></script>
+
+</body>
+</html>
