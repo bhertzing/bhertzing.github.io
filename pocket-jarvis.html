@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JARVIS in My Pocket — Bill&#x27;s Conversational Musings</title>
+<link rel="icon" href="images/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bill&#x27;s Conversational Musings">
+<meta property="og:title" content="JARVIS in My Pocket">
+<meta property="og:image" content="https://blog.billhertzing.com/images/social-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blog.billhertzing.com/images/social-card.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme/style.css">
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div><canvas id="skyCanvas"></canvas></div>
+<div class="wrap">
+  <header class="glass topbar">
+    <div>
+      <p class="eyebrow">BILL HERTZING · BLOG</p>
+      <a class="wordmark" href="index.html">Bill's <span>Conversational Musings</span></a>
+    </div>
+    <form class="site-search" action="search.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Search posts" aria-label="Search posts" autocomplete="off">
+    </form>
+  </header>
+  <nav class="nav"><a href="category/customer-success.html">Customer Success</a><a href="category/lessons.html">Lessons</a><a href="category/literature.html">Literature</a><a href="category/living.html">Living</a><a href="category/music.html">Music</a><a href="category/technology.html">Technology</a><a href="category/tips-advice.html">Tips &amp; Advice</a></nav>
+  
+<div class="layout">
+  <article class="glass article">
+    <p class="when">Wed 11 November 2026</p>
+    <h1 class="post-title">JARVIS in My Pocket</h1>
+    <div class="meta-row"><a class="pill" href="category/technology.html">Technology</a><a class="pill" href="tag/ai.html">AI</a><a class="pill" href="tag/jarvis.html">JARVIS</a><a class="pill" href="tag/voice.html">voice</a><a class="pill" href="tag/automation.html">automation</a></div>
+    <div class="body"><p><img alt="Pocket JARVIS on my iPhone, drawing a timeline chart" src="/images/pocket-jarvis.jpg" style="width:300px;display:block;margin:0 auto;" /></p>
+<p>Up to now JARVIS lived in my office. There's a voice line on the Mac, a heads-up display on the desk, a row of status lights, and a butler who answers out loud when I talk. Great when I'm at the desk. The moment I walked out the door, I was back to typing into a chat app that didn't know anything about me.</p>
+<p>So I built Pocket JARVIS. It took one afternoon.</p>
+<h2>Where the idea came from</h2>
+<p>I'm a member of the free section of a Skool community. The owner posted screenshots of wins from his paid members, and one of them caught my eye. Somebody had put their JARVIS on a phone, and they actually called it Pocket Jarvis.</p>
+<p>I handed the screenshot to my JARVIS and we picked it apart. A few details gave away how it probably worked. The download was tiny, far too small to be a real phone app, so it was most likely a small web server running on the computer with a page the phone opens and saves to the home screen. The conversation went something like, we can do that, and we can do it better. Mine already had the voice, the memory and the display. It just needed a way out of the office.</p>
+<p>Then I waited about a week.</p>
+<h2>Why I waited</h2>
+<p>Anthropic released Fable 5.2 this week, and like the last big release it came with a pile of promotional credits. I spent a lot of them building Pocket JARVIS. I did the same thing when an earlier version of Fable came out in September, and that's when I built the heads-up display for the first time.</p>
+<p>Cool Tip: when a new frontier model comes out with promotional credits, that's the time to build the big upgrade you've been putting off. Keep a list of the ideas that are too expensive for a normal week, and when the credits show up, pick one.</p>
+<h2>What it is</h2>
+<p>It's an icon on my iPhone home screen. I tap it, hold a button, talk, and let go. My words go to the same assistant running on my Mac at home, with the same memory and the same rules, and the answer comes back out of the phone in the same British voice I hear at the desk.</p>
+<p>It isn't a different assistant that happens to be on a phone. It's the same one. It knows my calendar, the people I know, my projects, the decisions we've already made. Ask "who is" someone and their card comes up on the phone with a photo. Ask for someone's address and I get a button that opens it in Maps. Ask for a chart and it draws on the phone and on the display back at my desk at the same time.</p>
+<p>There's a voice off switch for when I'm somewhere public. The answer shows up as text instead of being read out loud to the whole coffee shop.</p>
+<h2>The part I like best</h2>
+<p>From the phone it can still do real things. It can send an email, place a phone call, publish something. That's exactly the kind of power that makes me nervous on a device I could leave on a restaurant table.</p>
+<p>So it works the same way it does at the desk, with one extra step. It does a dry run first and tells me what it's about to send and to whom. When I say go ahead, a card pops up on the phone showing the exact content, and the only thing that approves it is Face ID. My spoken "yes" doesn't count. If I deny the card or just ignore it for two minutes, nothing goes out, and it doesn't try again unless I ask.</p>
+<p>Same instinct as when <a href="https://blog.billhertzing.com/jarvis-calls-a-restaurant.html">I had JARVIS call a restaurant</a>. Anything that leaves the house needs a human yes. Now that yes has a fingerprint on it, well, a face.</p>
+<p>A few things stay at the desk on purpose. From the phone it can't change its own code, can't open the folder where the keys live, and can't take screenshots. If I ask for one of those, it just tells me that one waits for the desk. No arguing, no clever workaround.</p>
+<h2>How it stays private</h2>
+<p>This was the question I cared about most. A phone app that can reach my assistant is also a door into my house.</p>
+<p>It runs over Tailscale, a private network that only my own devices can join. It is never open to the public internet. No port forwarding, no public link. The app locks itself after fifteen quiet minutes and opens again with Face ID. The phone has to be paired with a one-time code from the Mac first, and if I ever lose it, one command on the Mac cuts it off.</p>
+<p>Speech to text and the voice both run locally on the Mac, the same pieces the desk version uses. Only the AI model call goes out.</p>
+<h2>What surprised me</h2>
+<p>How well it works away from the house. The first real test was that same evening in the cereal aisle at H-E-B, on cellular, nowhere near my Wi-Fi. I held the button, asked my question, and the butler answered right there in my hand, same as he does at the desk. Tailscale does the hard part. The phone and the Mac find each other over the private network whether I'm at home or on a cell tower, and I never had to open anything up to the internet to make it work.</p>
+<p>The other surprise was how normal it felt. Standing in the kitchen, I asked for a family member's new address, and the card came up with a Maps button and a dry remark from the butler on the side. That's the same experience I get at the desk, just in my hand.</p>
+<h2>What's next</h2>
+<p>It only listens while the app is open on screen. Lock screen or background listening would take a real native app, and I'm not there yet. A text box for typing instead of talking is on the wishlist for meetings and waiting rooms.</p>
+<p>For now, the system I've been building in <a href="https://blog.billhertzing.com/from-silent-metronome-to-remote-control.html">From Silent Metronome to Remote Control</a> and <a href="https://blog.billhertzing.com/bare-hands.html">Bare Hands</a> finally leaves the office with me.</p>
+<p>Pretty neat stuff.</p></div>
+  </article>
+  
+<aside class="glass side">
+  <h2>Recent Posts</h2>
+  <ul><li><a href="pocket-jarvis.html">JARVIS in My Pocket</a></li><li><a href="from-silent-metronome-to-remote-control.html">From Silent Metronome to Remote Control</a></li><li><a href="the-lost-art-of-the-thank-you-card.html">The Lost Art of the Thank You Card</a></li><li><a href="the-gentlemans-calling-card.html">The Gentleman&#x27;s Calling Card</a></li><li><a href="the-dressing-gown.html">The Dressing Gown</a></li></ul>
+  <h2>Categories</h2>
+  <ul><li><a href="category/customer-success.html">Customer Success</a></li><li><a href="category/lessons.html">Lessons</a></li><li><a href="category/literature.html">Literature</a></li><li><a href="category/living.html">Living</a></li><li><a href="category/music.html">Music</a></li><li><a href="category/technology.html">Technology</a></li><li><a href="category/tips-advice.html">Tips &amp; Advice</a></li></ul>
+  <h2>Tags</h2>
+  <div class="tags"><a href="tag/2021.html">2021</a><a href="tag/acoustic.html">acoustic</a><a href="tag/advice.html">advice</a><a href="tag/ai.html">AI</a><a href="tag/archive.html">archive</a><a href="tag/austin.html">austin</a><a href="tag/automation.html">automation</a><a href="tag/backup.html">backup</a><a href="tag/bakery.html">bakery</a><a href="tag/blog.html">blog</a><a href="tag/book.html">book</a><a href="tag/bookmark.html">bookmark</a><a href="tag/bookmarks.html">bookmarks</a><a href="tag/california.html">california</a><a href="tag/car.html">car</a><a href="tag/career.html">career</a><a href="tag/character.html">character</a><a href="tag/chord.html">chord</a><a href="tag/cleaning.html">cleaning</a><a href="tag/clock.html">clock</a><a href="tag/cloud.html">cloud</a><a href="tag/code.html">code</a><a href="tag/coffee.html">coffee</a><a href="tag/conference.html">conference</a><a href="tag/culture.html">culture</a><a href="tag/customer-success.html">customer success</a><a href="tag/data.html">data</a><a href="tag/database.html">database</a><a href="tag/daw.html">daw</a><a href="tag/denver.html">denver</a><a href="tag/design.html">design</a><a href="tag/dns.html">dns</a><a href="tag/dogs.html">dogs</a><a href="tag/download.html">download</a><a href="tag/drink.html">drink</a><a href="tag/estes-park.html">estes park</a><a href="tag/etiquette.html">etiquette</a><a href="tag/fabric.html">fabric</a><a href="tag/failure.html">failure</a><a href="tag/festival.html">festival</a><a href="tag/film.html">film</a><a href="tag/five-pillars.html">five pillars</a><a href="tag/food.html">food</a><a href="tag/fretboard.html">fretboard</a><a href="tag/fun.html">fun</a><a href="tag/game.html">game</a><a href="tag/genai.html">GenAI</a><a href="tag/gentleman.html">gentleman</a><a href="tag/gift.html">gift</a><a href="tag/google.html">Google</a><a href="tag/guitar.html">guitar</a><a href="tag/hangout.html">hangout</a><a href="tag/hemingway.html">Hemingway</a><a href="tag/housekeeping.html">housekeeping</a><a href="tag/howto.html">HowTo</a><a href="tag/html.html">html</a><a href="tag/ideas.html">ideas</a><a href="tag/interview.html">interview</a><a href="tag/jarvis.html">JARVIS</a><a href="tag/journal.html">journal</a><a href="tag/keyboard.html">keyboard</a><a href="tag/launch.html">launch</a><a href="tag/lawn.html">lawn</a><a href="tag/learning.html">learning</a><a href="tag/lesson.html">lesson</a><a href="tag/light.html">light</a><a href="tag/lilypond.html">lilypond</a><a href="tag/linux.html">linux</a><a href="tag/markdown.html">markdown</a><a href="tag/mastering.html">mastering</a><a href="tag/modularity.html">modularity</a><a href="tag/motivation.html">motivation</a><a href="tag/music.html">music</a><a href="tag/navy.html">navy</a><a href="tag/networking.html">networking</a><a href="tag/phone.html">phone</a><a href="tag/photo.html">photo</a><a href="tag/picking.html">picking</a><a href="tag/pizza.html">pizza</a><a href="tag/playlist.html">playlist</a><a href="tag/protection.html">protection</a><a href="tag/quote.html">quote</a><a href="tag/quotes.html">quotes</a><a href="tag/rackspace.html">rackspace</a><a href="tag/recipe.html">recipe</a><a href="tag/recording.html">recording</a><a href="tag/reflection.html">reflection</a><a href="tag/relationships.html">relationships</a><a href="tag/renew.html">renew</a><a href="tag/respect.html">respect</a><a href="tag/review.html">review</a><a href="tag/rocky-mountains.html">rocky mountains</a><a href="tag/san-antonio.html">san antonio</a><a href="tag/scales.html">scales</a><a href="tag/scam.html">scam</a><a href="tag/score.html">score</a><a href="tag/security.html">security</a><a href="tag/shopping.html">shopping</a><a href="tag/storage.html">storage</a><a href="tag/strengths.html">strengths</a><a href="tag/style.html">style</a><a href="tag/system.html">system</a><a href="tag/talent.html">talent</a><a href="tag/technology.html">technology</a><a href="tag/texas.html">texas</a><a href="tag/tour.html">tour</a><a href="tag/traffic.html">traffic</a><a href="tag/travel.html">travel</a><a href="tag/tropical.html">tropical</a><a href="tag/tv.html">tv</a><a href="tag/video.html">video</a><a href="tag/virtual.html">virtual</a><a href="tag/vlog.html">vlog</a><a href="tag/voc.html">voc</a><a href="tag/voice.html">voice</a><a href="tag/wardrobe.html">wardrobe</a><a href="tag/water.html">water</a><a href="tag/webinar.html">webinar</a><a href="tag/website.html">website</a><a href="tag/wedding.html">wedding</a><a href="tag/windows.html">windows</a><a href="tag/wine.html">wine</a><a href="tag/women.html">women</a><a href="tag/wordpress.html">wordpress</a><a href="tag/yard-work.html">yard work</a></div>
+  <h2>Social</h2>
+  <ul><li><a href="https://twitter.com/BillHertzing">Twitter</a></li><li><a href="http://www.linkedin.com/in/bhertzing">LinkedIn</a></li><li><a href="https://www.instagram.com/bhertzing/">Instagram</a></li><li><a href="https://www.youtube.com/billhertzing">YouTube</a></li><li><a href="https://soundcloud.com/billhertzing">SoundCloud</a></li></ul>
+  <h2>Blogroll</h2>
+  <ul>
+    <li><a href="search.html">Search this site</a></li>
+    <li><a href="http://billhertzing.com/">BillHertzing.com</a></li><li><a href="https://www.youtube.com/c/ScottBalkum">Scott Balkum YouTube</a></li>
+  </ul>
+</aside>
+
+</div>
+
+  <footer class="site-foot">
+    <span>Copyright © 2015–2026 Bill Hertzing</span>
+  </footer>
+</div>
+<script src="theme/sky.js"></script>
+
+</body>
+</html>
